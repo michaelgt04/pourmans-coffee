@@ -1,5 +1,5 @@
 {
-  "name": "rails-react-boilerplate",
+  "name": "pourmans-coffee",
   "private": true,
   "scripts": {
     "test": "node_modules/.bin/karma start karma.conf.js",
