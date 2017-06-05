@@ -1,43 +1,46 @@
 import React, { Component } from 'react';
-import GifsTemp from '../components/GifsTemp';
-import { connect } from 'react-redux';
-import { fetchPuppyGifs } from '../actions/getPuppyGifs';
+import { connect } from 'react-redux'
+import { fetchEvents } from '../actions/getEvents';
+import EventTile from '../components/EventTile';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+  }
 
   componentDidMount() {
-    this.props.fetchPuppyGifs();
+    this.props.fetchEvents();
   }
 
   render(){
-    let puppies = this.props.puppies.map(puppy => {
+    let events = this.props.events.map(event => {
       return(
-        <GifsTemp
-          key={puppy.id}
-          puppy={puppy}
+        <EventTile
+          event={event}
+          key={event.id}
         />
       )
     })
     return(
       <div>
-        {puppies}
+        {events}
       </div>
-    );
+    )
   }
 }
 
 let mapStateToProps = state => {
   return {
-    puppies: state.puppies
+    events: state.events
   }
 }
 
 let mapDispatchToProps = dispatch => {
   return {
-    fetchPuppyGifs: () => {
-      dispatch(fetchPuppyGifs())
+    fetchEvents: () => {
+      dispatch(fetchEvents())
     }
-  };
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
