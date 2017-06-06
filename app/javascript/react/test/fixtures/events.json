@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "day": "Tuesday",
+    "start_time": "12:00",
+    "end_time": "3:00",
+    "location": "Dewey Square"
+  },
+  {
+    "id": 2,
+    "day": "Monday",
+    "start_time": "12:00",
+    "end_time": "3:00",
+    "location": "Dewey Square"
+  },
+  {
+    "id": 3,
+    "day": "Friday",
+    "start_time": "12:00",
+    "end_time": "3:00",
+    "location": "Dewey Square"
+  }
+]

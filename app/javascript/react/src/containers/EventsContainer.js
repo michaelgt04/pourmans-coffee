@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchEvents } from '../actions/getEvents';
 import EventTile from '../components/EventTile';
 
-class App extends Component {
+class EventsContainer extends Component {
   constructor(props){
     super(props);
   }
@@ -43,4 +43,4 @@ let mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer);
