@@ -1,18 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,900');
-
 .landing-section {
-  background-color: darken(#434747, 20%);
+  background-color: #D6C8AE;
   height: 100vh;
 
-  h1 {
-    font-family: 'Heebo', sans-serif;
-    font-weight: 900;
-    letter-spacing: 1px;
-    font-size: 3rem;
-  }
-
-  .logo{
+  .logo {
     display: block;
     margin: auto;
+    padding-top: 6%;
+    max-height: 75%;
+    max-width: 75%;
+    // padding-top: 40%;
+  }
+
+  .nav-down {
+    font-size: 3rem;
+    color: #434747;
+    display: block;
+    text-align: center;
+
+    @media (min-width: 600px) {
+      margin-top: 2%;
+      font-size: 4rem;
+    }
+
+    @media(min-width: 1000px) {
+      font-size: 5rem;
+      display: inline;
+      position: fixed;
+      top: 40%;
+      margin-left: 90%;
+    }
   }
 }
