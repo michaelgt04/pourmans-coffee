@@ -13,6 +13,10 @@ class EventsContainer extends Component {
   }
 
   render(){
+
+    debugger;
+
+
     let events = this.props.events.map(event => {
       return(
         <EventTile
@@ -22,8 +26,11 @@ class EventsContainer extends Component {
       )
     })
     return(
-      <div>
-        {events}
+      <div className="events-section">
+        <h1 className="events-header">Where to Find Us</h1>
+        <div className="row">
+          {events}
+        </div>
       </div>
     )
   }

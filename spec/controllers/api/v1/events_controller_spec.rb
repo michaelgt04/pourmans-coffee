@@ -5,15 +5,15 @@ describe Api::V1::EventsController do
 
   describe "#index" do
     let!(:expected_json) {
-      [
-        {
+      {
+        "Tuesday" => [{
           "id" => event.id,
           "day" => "Tuesday",
           "start_time" => "12:30",
           "end_time" => "1:30",
           "location" => "Dewey Square"
-        }
-      ]
+        }]
+      }
     }
 
     it "should return a json representation of all the events in the database" do

@@ -1,0 +1,21 @@
+$light-blue: #E6EDF7;
+$dark-gray: #434747;
+
+.events-section {
+  background-color: $light-blue;
+  padding-bottom: 2rem;
+  min-height: 100vh;
+  color: $dark-gray;
+
+  .event-tile-background {
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .events-header {
+    padding-top: 3rem;
+    text-align: center;
+  }
+
+}
