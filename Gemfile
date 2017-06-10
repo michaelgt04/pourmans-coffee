@@ -6,6 +6,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
+gem 'active_model_serializers'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 group :development do
   gem 'listen', '~> 3.0.5'
