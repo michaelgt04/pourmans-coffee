@@ -1,0 +1,36 @@
+{
+  "Tuesday": [
+    {
+      "id": 1,
+      "day": "Tuesday",
+      "start_time": "12:00",
+      "end_time": "3:00",
+      "location": "Dewey Square"
+    }
+  ],
+  "Monday": [
+    {
+      "id": 2,
+      "day": "Monday",
+      "start_time": "12:00",
+      "end_time": "3:00",
+      "location": "Dewey Square"
+    },
+    {
+      "id": 4,
+      "day": "Monday",
+      "start_time": "5:00",
+      "end_time": "10:00",
+      "location": "Framingham"
+    }
+  ],
+  "Friday": [
+    {
+      "id": 3,
+      "day": "Friday",
+      "start_time": "12:00",
+      "end_time": "3:00",
+      "location": "Dewey Square"
+    }
+  ]
+}

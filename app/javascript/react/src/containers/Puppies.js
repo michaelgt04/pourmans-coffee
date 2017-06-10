@@ -4,7 +4,7 @@ import LandingSection from '../components/LandingSection';
 import { connect } from 'react-redux';
 import { fetchPuppyGifs } from '../actions/getPuppyGifs';
 
-class App extends Component {
+class Puppies extends Component {
 
   componentDidMount() {
     this.props.fetchPuppyGifs();
@@ -41,4 +41,4 @@ let mapDispatchToProps = dispatch => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(Puppies);
