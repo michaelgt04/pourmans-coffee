@@ -233,8 +233,4 @@ DEPENDENCIES
   webpacker!
 
 BUNDLED WITH
-<<<<<<< HEAD
-   1.15.0
-=======
    1.15.1
->>>>>>> master
