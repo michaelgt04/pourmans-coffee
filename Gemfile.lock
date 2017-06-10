@@ -76,6 +76,8 @@ GEM
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.2)
+      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
@@ -211,6 +213,7 @@ DEPENDENCIES
   active_model_serializers
   capybara
   factory_girl_rails
+  font-awesome-rails
   jquery-rails
   launchy
   listen (~> 3.0.5)
@@ -230,4 +233,8 @@ DEPENDENCIES
   webpacker!
 
 BUNDLED WITH
+<<<<<<< HEAD
+   1.15.0
+=======
    1.15.1
+>>>>>>> master

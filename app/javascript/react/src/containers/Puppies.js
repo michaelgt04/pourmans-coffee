@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GifsTemp from '../components/GifsTemp';
+import LandingSection from '../components/LandingSection';
 import { connect } from 'react-redux';
 import { fetchPuppyGifs } from '../actions/getPuppyGifs';
 
@@ -20,7 +21,7 @@ class Puppies extends Component {
     })
     return(
       <div>
-        {puppies}
+        <LandingSection />
       </div>
     );
   }
