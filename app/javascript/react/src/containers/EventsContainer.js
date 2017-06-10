@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchEvents } from '../actions/getEvents';
-import EventTile from '../components/EventTile';
+import DayTile from '../components/DayTile';
 
 class EventsContainer extends Component {
   constructor(props){
@@ -13,23 +13,26 @@ class EventsContainer extends Component {
   }
 
   render(){
+    let eventDays = [];
+    let events = this.props.events;
 
-    debugger;
+    for(var day in events) {
 
-
-    let events = this.props.events.map(event => {
-      return(
-        <EventTile
-          event={event}
-          key={event.id}
+      let dayTile =
+        <DayTile
+          key={day}
+          events={events[day]}
+          day={day}
         />
-      )
-    })
+
+      eventDays.push(dayTile)
+    }
+
     return(
       <div className="events-section">
         <h1 className="events-header">Where to Find Us</h1>
         <div className="row">
-          {events}
+          {eventDays}
         </div>
       </div>
     )

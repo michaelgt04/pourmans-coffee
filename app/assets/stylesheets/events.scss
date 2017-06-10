@@ -1,13 +1,14 @@
 $light-blue: #E6EDF7;
+$dark-blue: #8B95A3;
 $dark-gray: #434747;
 
 .events-section {
-  background-color: $light-blue;
+  background-color: $dark-blue;
   padding-bottom: 2rem;
   min-height: 100vh;
-  color: $dark-gray;
+  color: darken($dark-gray, 10%);
 
-  .event-tile-background {
+  .day-tile-background {
     background-color: white;
     padding: 1rem;
     margin: 1rem;
@@ -16,6 +17,12 @@ $dark-gray: #434747;
   .events-header {
     padding-top: 3rem;
     text-align: center;
+  }
+
+  .event-tile {
+    border: 1px solid lighten($dark-gray, 60%);
+    margin-bottom: .5rem;
+    padding: 2%;
   }
 
 }
