@@ -19,10 +19,8 @@ describe('EventTile', () => {
   })
 
   it('renders the expected information', () => {
-    let wrapperText = wrapper.text()
-    expect(wrapperText).toMatch('Tuesday');
-    expect(wrapperText).toMatch('12:00');
-    expect(wrapperText).toMatch('3:00');
-    expect(wrapperText).toMatch('Dewey Square');
+    expect(wrapper.text()).toMatch('12:00');
+    expect(wrapper.text()).toMatch('3:00');
+    expect(wrapper.text()).toMatch('Dewey Square');
   })
 })

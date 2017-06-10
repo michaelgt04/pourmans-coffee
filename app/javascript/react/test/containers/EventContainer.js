@@ -1,4 +1,4 @@
-import EventTile from 'components/EventTile';
+import DayTile from 'components/DayTile';
 
 describe('EventsContainer', () => {
 
@@ -11,9 +11,9 @@ describe('EventsContainer', () => {
 
   })
 
-  it('renders EventTile components', done => {
+  it('renders DayTile components', done => {
     setTimeout(() => {
-      expect(wrapper.find(EventTile)).toBePresent();
+      expect(wrapper.find(DayTile)).toBePresent();
       done();
     }, 0);
   });
