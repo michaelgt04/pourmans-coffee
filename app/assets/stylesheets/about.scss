@@ -1,0 +1,39 @@
+$light-blue: #E6EDF7;
+@import 'breakpoint';
+
+.about-us-section{
+  background-image: url('http://res.cloudinary.com/dpuzgzqir/image/upload/v1497541257/coffee-beans_kenwxf.jpg');
+  height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+
+  .overlay {
+    background-color: $light-blue;
+    opacity: 0.75;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .about-text {
+    max-width: 80%;
+    margin: auto;
+    text-align: justify;
+    padding: 10% 0;
+  }
+
+  .about-header {
+    font-size: 2.5em;
+  }
+
+  .blurb {
+    font-size: 1.25em;
+
+    @include breakpoint(medium){
+      font-size: 1.5em;
+    }
+
+    @include breakpoint(large){
+      font-size: 1.5em;
+    };
+  }
+}

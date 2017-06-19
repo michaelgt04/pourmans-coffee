@@ -14,9 +14,11 @@ class AboutUsContainer extends Component {
 
   render(){
     return(
-      <AboutTile
-        about={this.props.about[0]}
-      />
+      <div className="about-us-section">
+        <AboutTile
+          about={this.props.about[0]}
+        />
+      </div>
     )
   }
 }
