@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchInstaFeed } from '../actions/getInstaFeed';
-import InstaFeed from '../components/InstaFeed';
+import PhotoTile from '../components/PhotoTile';
 
 class InstaFeedContainer extends Component {
   constructor(props){
@@ -13,8 +13,21 @@ class InstaFeedContainer extends Component {
   }
 
   render(){
+    let photos = this.props.instaFeed.map(photo => {
+      return(
+        <PhotoTile
+          key={photo.id}
+          photo={photo}
+        />
+      )
+    })
+
     return(
-      <InstaFeed />
+      <div className="instagram">
+        <div className="row">
+          {photos}
+        </div>
+      </div>
     )
   }
 }
