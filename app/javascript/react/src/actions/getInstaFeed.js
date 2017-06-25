@@ -9,15 +9,22 @@ export const getInstaFeedSuccess = instagram => {
   }
 }
 
+
 export const fetchInstaFeed = () => {
   let instagramToken = envVar('instagram')
+
   return(dispatch) => {
-    fetch(`https://api.instagram.com/v1/users/self/media/recent/?access_token=${instagramToken}`)
-    .then(response => {
-      let photos = response.json()
-      return photos
-    }).then(photos => {
-      return dispatch(getInstaFeedSuccess(photos))
-    })
+    $.ajax({
+        url: `https://api.instagram.com/v1/users/self/media/recent/?access_token=${instagramToken}&callback=?`,
+        type: 'GET',
+        data: {},
+        dataType: 'jsonp',
+        success: function(data) {
+          return dispatch(getInstaFeedSuccess(data.data))
+        },
+        error: function(err) {
+          alert(err);
+        }
+      })
   }
 }
