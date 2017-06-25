@@ -13,6 +13,7 @@
 
     @include breakpoint(medium){
       padding-top: 15%;
+      max-height: 80%;
     }
 
     @include breakpoint(large){
@@ -34,7 +35,7 @@
       color: #D6C8AE;
       background-color: #434747;
       border-radius: 10%;
-      padding-bottom: .5%;
+      padding-bottom: 1%;
 
       &:hover {
         color: #434747;
@@ -49,7 +50,7 @@
       color: #D6C8AE;
       background-color: #434747;
       top: 85%;
-      margin-left: 90%;
+      margin: 0 0 0 90%;
       border-radius: 10%;
       padding-bottom: .5%;
 
