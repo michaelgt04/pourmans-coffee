@@ -3,7 +3,12 @@ import { configureStore } from 'store/configureStore';
 import { browserHistory } from 'react-router';
 // import { syncHistoryWithStore, push } from 'react-router-redux';
 
-let mountReactAppAt = (url) => {
+let mountReactAppAt = (url, callback = function(){}) => {
+  let rootDiv = document.createElement('div');
+  rootDiv.id = 'react-app';
+  callback(rootDiv);
+  document.body.appendChild(rootDiv);
+
   let store = configureStore()
   store.dispatch(push(url));
 
