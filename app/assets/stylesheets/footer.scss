@@ -1,0 +1,22 @@
+$dark-gray: #434747;
+
+.footer {
+  background-color: $dark-gray;
+  color: white;
+  text-align: center;
+
+  .contact-header {
+    font-size: 2.5em;
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-align: center;
+  }
+
+  .contact-tagline {
+    margin-top: 0;
+  }
+
+  .fa {
+    font-size: 2rem;
+  }
+}
