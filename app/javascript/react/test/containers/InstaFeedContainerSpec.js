@@ -15,17 +15,22 @@ describe('InstaFeedContainer', () => {
       rootDiv.setAttribute("data-instagram", "12345")
     })
 
-    $.fn.ajax.and.returnValue(createResponseFromFixture('photos'))
-    // console.log($.ajax)
+    let json = window.__fixtures__['photos']
 
+    spyOn($, 'ajax').and.callFake(params => {
+      params.success(json)
+    })
   })
 
   it('renders PhotoTile components', done => {
     setTimeout(() => {
-      expect(true).toEqual(true)
+      // setTimeout(() => {
+        expect(wrapper.find(PhotoTile)).toBePresent();
+        done();
+
+      // }, 0)
+      // expect(true).toEqual(true)
       // console.log(wrapper.debug())
-      // expect(wrapper.find(PhotoTile)).toBePresent();
-      done();
     }, 0);
   });
 });

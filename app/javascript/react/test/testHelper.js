@@ -29,8 +29,8 @@ Object.assign(global, {
 
 beforeEach(() => {
   jasmineEnzyme();
-  let ajax = jasmine.createSpy('ajax spy')
-  $.fn.ajax = ajax
+  // let ajax = jasmine.createSpy('ajax spy')
+  // $.fn.ajax = ajax
 });
 
 afterEach(() => {
