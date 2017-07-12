@@ -10,27 +10,38 @@ describe('InstaFeedContainer', () => {
         return(createResponseFromFixture('events'))
       }
     })
+    let json = window.__fixtures__['photos']
+    //
+    // jasmine.Ajax.install();
+    //
+    // let request = jasmine.Ajax.request.mostRecent();
+    //
+    // console.log(json)
+    // console.log(request)
+    // request.respondWith(json)
+
+    spyOn($, 'ajax').and.callFake(params => {
+      params.success(json)
+    })
 
     wrapper = mountReactAppAt('/', function(rootDiv) {
       rootDiv.setAttribute("data-instagram", "12345")
     })
 
-    let json = window.__fixtures__['photos']
 
-    spyOn($, 'ajax').and.callFake(params => {
-      params.success(json)
-    })
+  })
+
+  afterEach(() => {
+    jasmine.Ajax.uninstall()
   })
 
   it('renders PhotoTile components', done => {
-    setTimeout(() => {
-      // setTimeout(() => {
-        expect(wrapper.find(PhotoTile)).toBePresent();
-        done();
 
-      // }, 0)
-      // expect(true).toEqual(true)
-      // console.log(wrapper.debug())
-    }, 0);
+
+
+    // setTimeout(() => {
+    //     expect(wrapper.find(PhotoTile)).toBePresent();
+    //     done();
+    // }, 0);
   });
 });

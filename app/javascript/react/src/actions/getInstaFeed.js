@@ -15,7 +15,7 @@ export const fetchInstaFeed = () => {
 
   return(dispatch) => {
     $.ajax({
-        url: `https://api.instagram.com/v1/users/self/media/recent/?access_token=${instagramToken}&callback=?`,
+        url: `https://api.instagram.com/v1/users/1425742777/media/recent/?count=9&access_token=${instagramToken}&callback=?`,
         type: 'GET',
         data: {},
         dataType: 'jsonp',
