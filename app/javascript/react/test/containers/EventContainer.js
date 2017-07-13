@@ -4,10 +4,16 @@ describe('EventsContainer', () => {
 
   beforeEach(() => {
     spyOn(global, 'fetch').and.callFake(url => {
-      return(createResponseFromFixture('events'))
+      if(url.endsWith('/api/v1/about')){
+        return(createResponseFromFixture('about'))
+      } else if (url.endsWith('/api/v1/events')){
+        return(createResponseFromFixture('events'))
+      }
     })
 
-    wrapper = mountReactAppAt('/')
+    wrapper = mountReactAppAt('/', function(rootDiv) {
+      rootDiv.setAttribute("data-instagram", "12345")
+    })
 
   })
 
