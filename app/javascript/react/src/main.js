@@ -16,6 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     <Root store={store}
       history={history}
     />,
-    document.getElementById('app')
+    document.getElementById('react-app')
   )
 })
