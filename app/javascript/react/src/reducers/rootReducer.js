@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   puppies: GifsReducer,
   events: EventsReducer,
   about: AboutReducer,
-  products: ProductsReducer
+  products: ProductsReducer,
   instagram: InstaFeedReducer
 });
 
