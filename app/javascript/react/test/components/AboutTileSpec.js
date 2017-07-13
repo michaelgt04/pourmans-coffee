@@ -22,7 +22,6 @@ describe('AboutTile', () => {
 
   it('renders a p tag with the about us blurb', () => {
     expect(wrapper.find('p')).toBePresent();
-    console.log(wrapper.text())
     expect(wrapper.text()).toMatch('dope!')
   })
 })
