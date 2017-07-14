@@ -10,7 +10,6 @@ class NavBar extends Component {
   }
 
   render(){
-    console.log(this.props.selectedAnchorId)
     let anchorLinks = this.props.links.map(link => {
       let handleClick = () => {
         this.props.selectAnchor(link.id)
