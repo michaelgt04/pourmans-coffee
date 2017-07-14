@@ -20,8 +20,5 @@
 /public/packs
 /node_modules
 /coverage
-
-# Ignore encrypted secrets key file.
-config/secrets.yml.key
-
 .env
+config/secrets.yml.key
