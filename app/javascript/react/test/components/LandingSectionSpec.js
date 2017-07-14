@@ -1,6 +1,6 @@
 import LandingSection from 'components/LandingSection';
 
-describe('GifsTemp', () => {
+describe('LandingSection', () => {
 
   beforeEach(() => {
     wrapper = shallow(
