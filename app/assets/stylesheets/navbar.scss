@@ -8,7 +8,7 @@
   .links {
     list-style-type: none;
     padding: 1rem;
-    background-color: white;
+    background-color: #434747;
     padding: 0;
   }
 
@@ -18,17 +18,17 @@
     text-align: center;
     text-decoration: none;
     display: block;
-    color: #434747;
+    color: white;
     font-weight: bold;
   }
 
   a:hover {
-    background-color: #434747;
-    color: white;
+    // background-color: #B0906C;
+    color: lighten(#434747, 50%);
   }
 
   .selected {
-    background-color: #434747;
+    background-color: #B0906C;
     color: white;
   }
 }

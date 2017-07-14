@@ -13,7 +13,6 @@ class NavBar extends Component {
     console.log(this.props.selectedAnchorId)
     let anchorLinks = this.props.links.map(link => {
       let handleClick = () => {
-        debugger;
         this.props.selectAnchor(link.id)
       }
 
@@ -46,7 +45,7 @@ class NavBar extends Component {
 
 let mapStateToProps = state => {
   return {
-    selectedAnchorId: state.selectedAnchorId
+    selectedAnchorId: state.selectedAnchorId.selectedAnchorId
   }
 }
 
