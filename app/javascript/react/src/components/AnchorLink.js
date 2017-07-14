@@ -2,8 +2,8 @@ import React from 'react';
 
 const AnchorLink = props => {
   return(
-    <a href={`${props.anchor}`}>
-      <div onClick={props.handleClick} className={props.selectedClass}>{props.text}</div>
+    <a className={props.selectedClass} onClick={props.handleClick} href={`${props.anchor}`}>
+      <div>{props.text}</div>
     </a>
   )
 }
