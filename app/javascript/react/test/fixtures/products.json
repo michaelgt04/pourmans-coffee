@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Coconut Cold Brew",
+    "description": "Amazingly creamy and smooth coffee",
+    "img_url": "https://static01.nyt.com/images/2016/05/24/dining/24COOKING-COLD-BREWED-ICE-COFFEE2/24COOKING-COLD-BREWED-ICE-COFFEE2-articleLarge.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Classic Cold Brew",
+    "description": "Even our regular cold brew will still knock your socks off",
+    "img_url": "http://nitrocoldbrew.coffeebean.com/images/NitroCB_1920x1080.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Dark Chocolate Brownie",
+    "description": "The most lucious brownie you could possibly imagine. Fudgy, chewy, everything you could ask for.",
+    "img_url": "http://d2gk7xgygi98cy.cloudfront.net/4-3-large.jpg"
+  }
+]
