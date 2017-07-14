@@ -6,7 +6,7 @@ let initialState = {
 };
 
 export const ProductsReducer = (state = initialState, action) => {
-  let newState, thing;
+  let newState;
   switch(action.type){
     case GET_PRODUCTS_SUCCESS:
       newState = { products: action.products }
