@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectAnchor } from '../actions/selectAnchor';
+import { selectAnchor, showNav, hideNav } from '../actions/selectAnchor';
 import { configureAnchors } from 'react-scrollable-anchor';
 import AnchorLink from '../components/AnchorLink';
 
@@ -10,10 +10,20 @@ class NavBar extends Component {
   }
 
   render(){
-    let anchorLinks = this.props.links.map(link => {
-      let handleClick = () => {
-        this.props.selectAnchor(link.id)
-      }
+    let anchorLinks;
+    document.addEventListener('scroll', () => {
+      if (document.body.scrollTop > (window.innerHeight / 1.25)) {
+        console.log('Nav Bar')
+        this.props.showNav()
+    } else {
+        this.props.hideNav()
+    }})
+
+    if (this.props.showNavState) {
+      anchorLinks = this.props.links.map(link => {
+        let handleClick = () => {
+          this.props.selectAnchor(link.id)
+        }
 
         let selectedClass;
         if(link.id === this.props.selectedAnchorId){
@@ -21,20 +31,21 @@ class NavBar extends Component {
         }
 
 
-      return(
-        <AnchorLink
+        return(
+          <AnchorLink
           key={link.anchor}
           anchor={link.anchor}
           text={link.text}
           selectedClass={selectedClass}
           handleClick={handleClick}
-        />
-      )
-    })
+          />
+        )
+      })
+    }
 
     return(
       <div className="navbar">
-        <ul className="links">
+        <ul className="links show-for-large">
           {anchorLinks}
         </ul>
       </div>
@@ -44,7 +55,8 @@ class NavBar extends Component {
 
 let mapStateToProps = state => {
   return {
-    selectedAnchorId: state.selectedAnchorId.selectedAnchorId
+    selectedAnchorId: state.selectedAnchorId.selectedAnchorId,
+    showNavState: state.selectedAnchorId.showNav
   }
 }
 
@@ -52,6 +64,12 @@ let mapDispatchToProps = dispatch => {
   return {
     selectAnchor: (id) => {
       dispatch(selectAnchor(id))
+    },
+    showNav: () => {
+      dispatch(showNav())
+    },
+    hideNav: () => {
+      dispatch(hideNav())
     }
   }
 }
