@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchEvents } from '../actions/getEvents';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import DayTile from '../components/DayTile';
 
 class EventsContainer extends Component {
@@ -30,7 +31,9 @@ class EventsContainer extends Component {
 
     return(
       <div className="events-section">
-        <h2 className="events-header">Where to Find Us</h2>
+        <ScrollableAnchor id={"find-us"}>
+          <h2 className="events-header">Where to Find Us</h2>
+        </ScrollableAnchor>
         <div className="row">
           {eventDays}
         </div>
