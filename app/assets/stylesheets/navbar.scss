@@ -13,17 +13,13 @@
   }
 
   a {
-    border: 1px solid black;
     border-bottom: none;
-    padding: 1rem;
+    padding: 1.25rem 1rem;
     text-align: center;
     text-decoration: none;
     display: block;
-    color: black;
-
-  }
-  a:last-child{
-    border-bottom: 1px solid black;
+    color: #434747;
+    font-weight: bold;
   }
 
   a:hover {
@@ -31,4 +27,8 @@
     color: white;
   }
 
+  .selected {
+    background-color: #434747;
+    color: white;
+  }
 }
