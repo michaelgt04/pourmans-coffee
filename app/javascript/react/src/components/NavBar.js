@@ -3,16 +3,16 @@ import { configureAnchors } from 'react-scrollable-anchor'
 
 const NavBar = props => {
   configureAnchors({scrollDuration: 800})
-
   return(
     <div className="navbar">
       <ul className="links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#find-us">Find Us</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#instagram">Instagram</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <a href="#home"><div>Home</div></a>
+        <a href="#find-us"><div>Find Us</div></a>
+        <a href="#about"><div>About</div></a>
+        <a href="#products"><div>Products</div></a>
+        <a href="#instagram"><div>Instagram</div></a>
+        <a href="#contact"><div>Contact</div></a>
+
       </ul>
     </div>
   )
