@@ -16,18 +16,11 @@ class ProductsContainer extends Component {
     let products = this.props.products.map(product => {
       let onHover = () => { this.props.hoverProduct(product.id) }
 
-      let displayText, title;
-      if (product.id === this.props.selectedProductId){
-        title = product.title
-        displayText = product.description
-      }
-
       return(
         <ProductTile
           key={product.id}
           product={product}
-          title={title}
-          displayText={displayText}
+          selectedProductId={this.props.selectedProductId}
           handleHover={onHover}
           handleLeave={this.props.leaveProduct}
         />
@@ -35,9 +28,11 @@ class ProductsContainer extends Component {
     })
 
     return(
-      <div className='products row'>
-        <h1>The Goods</h1>
-        {products}
+      <div className='products'>
+        <div className='row'>
+          <h2 className='products-header'>The Goods</h2>
+          {products}
+        </div>
       </div>
     )
   }

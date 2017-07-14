@@ -25,6 +25,7 @@ class InstaFeedContainer extends Component {
     return(
       <div className="instagram">
         <div className="row">
+          <h2 className='insta-header'>Like what you see? Follow us!</h2>
           {photos}
         </div>
       </div>
