@@ -5,7 +5,7 @@ import AboutUsContainer from '../containers/AboutUsContainer';
 import ProductsContainer from '../containers/ProductsContainer';
 import InstaFeedContainer from '../containers/InstaFeedContainer';
 import Footer from './Footer';
-import NavBar from './NavBar';
+import NavBar from '../containers/NavBar';
 
 const App = props => {
   return(

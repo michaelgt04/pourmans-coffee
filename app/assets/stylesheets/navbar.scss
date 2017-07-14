@@ -19,14 +19,16 @@
     text-align: center;
     text-decoration: none;
     display: block;
+    color: black;
 
   }
   a:last-child{
     border-bottom: 1px solid black;
   }
 
-  a:active {
-    background-color: black;
+  a:hover {
+    background-color: #434747;
+    color: white;
   }
 
 }
