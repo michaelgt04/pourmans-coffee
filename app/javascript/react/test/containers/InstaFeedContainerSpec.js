@@ -1,6 +1,6 @@
-import DayTile from 'components/DayTile';
+import PhotoTile from 'components/PhotoTile';
 
-describe('EventsContainer', () => {
+describe('InstaFeedContainer', () => {
 
   beforeEach(() => {
     spyOn(global, 'fetch').and.callFake(url => {
@@ -12,7 +12,7 @@ describe('EventsContainer', () => {
         return(createResponseFromFixture('products')) 
       }
     })
-    
+
     let fixture = window.__fixtures__['photos']
     
     spyOn($, 'ajax').and.callFake(object => {
@@ -20,14 +20,14 @@ describe('EventsContainer', () => {
     })
 
     wrapper = mountReactAppAt('/', function(rootDiv) {
-      rootDiv.setAttribute("data-instagram", "12345")
+      rootDiv.setAttribute('data-instagram', "12345")
     })
-
   })
 
-  it('renders DayTile components', done => {
+  it('loads a collection of PhotoTile components', done => {
     setTimeout(() => {
-      expect(wrapper.find(DayTile)).toBePresent();
+      expect(wrapper.find(PhotoTile)).toBePresent();
+      expect(wrapper.find(PhotoTile).length).toEqual(2)
       done();
     }, 0);
   });
