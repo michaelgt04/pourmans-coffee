@@ -1,9 +1,11 @@
 import React from 'react';
-
+import ScrollableAnchor from 'react-scrollable-anchor';
 const Footer = props => {
   return(
     <div className="footer">
-      <h4 className="contact-header">We'd love to hear from you!</h4>
+      <ScrollableAnchor id={'contact'}>
+        <h4 className="contact-header">We'd love to hear from you!</h4>
+      </ScrollableAnchor>
       <p className="contact-tagline">Drop us a line or follow us on social media</p>
       <div className="contact-icons">
         <i className="fa fa-facebook-square" aria-hidden="true"></i>

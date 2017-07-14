@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getProducts, hoverProduct, leaveProduct } from '../actions/getProducts';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import ProductTile from '../components/ProductTile';
 
 class ProductsContainer extends Component {
@@ -28,11 +29,11 @@ class ProductsContainer extends Component {
     })
 
     return(
-      <div className='products'>
-        <div className='row'>
-          <h2 className='products-header'>The Goods</h2>
-          {products}
-        </div>
+      <div className='products row'>
+        <ScrollableAnchor id={'products'}>
+          <h1>The Goods</h1>
+        </ScrollableAnchor>
+        {products}
       </div>
     )
   }
