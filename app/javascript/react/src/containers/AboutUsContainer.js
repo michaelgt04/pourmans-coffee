@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAbout } from '../actions/getAbout';
+import ScrollableAnchor from 'react-scrollable-anchor';
 import AboutTile from '../components/AboutTile';
 
 class AboutUsContainer extends Component {
@@ -15,6 +16,10 @@ class AboutUsContainer extends Component {
   render(){
     return(
       <div className="about-us-section">
+        <ScrollableAnchor id={"about"}>
+          <div className="about-anchor">
+          </div>
+        </ScrollableAnchor>
         <AboutTile
           about={this.props.about[0]}
         />

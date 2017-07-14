@@ -1,0 +1,33 @@
+.navbar {
+  position: fixed;
+  max-width: 15rem;
+  right: 3%;
+  top: 20%;
+  z-index: 1;
+
+  .links {
+    list-style-type: none;
+    padding: 1rem;
+    background-color: #434747;
+    padding: 0;
+  }
+
+  a {
+    border-bottom: none;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: white;
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: lighten(#434747, 50%);
+  }
+
+  .selected {
+    background-color: #B0906C;
+    color: white;
+  }
+}
