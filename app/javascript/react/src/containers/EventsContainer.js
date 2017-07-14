@@ -30,7 +30,7 @@ class EventsContainer extends Component {
 
     return(
       <div className="events-section">
-        <h1 className="events-header">Where to Find Us</h1>
+        <h2 className="events-header">Where to Find Us</h2>
         <div className="row">
           {eventDays}
         </div>
