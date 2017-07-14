@@ -1,6 +1,6 @@
 import ProductTile from 'components/ProductTile';
 
-fdescribe('ProductTile', () => {
+describe('ProductTile', () => {
   let wrapper,
       product,
       handleHover,
@@ -33,7 +33,6 @@ fdescribe('ProductTile', () => {
   it('renders an image with the photo url', () => {
     expect(wrapper.find('img')).toBePresent();
     expect(wrapper.find('img')).toHaveProp('src', 'http://nitrocoldbrew.coffeebean.com/images/NitroCB_1920x1080.jpg')
-    console.log(wrapper.debug())
   })
 
   it('displays the product description', () => {
