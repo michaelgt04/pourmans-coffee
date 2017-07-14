@@ -36,29 +36,18 @@
       background-color: #434747;
       border-radius: 10%;
       padding-bottom: 1%;
-
-      &:hover {
-        color: #434747;
-        background-color: #D6C8AE;
-      }
     }
 
     @include breakpoint(large) {
       font-size: 5rem;
-      display: inline;
-      position: fixed;
       color: #D6C8AE;
       background-color: #434747;
-      top: 85%;
-      margin: 0 0 0 90%;
+      right: 3.5%;
+      position: absolute;
+      bottom: 0;
+      padding: 0.5rem;
+      padding-bottom: 1%;
       border-radius: 10%;
-      padding-bottom: .5%;
-
-      &:hover {
-        color: #434747;
-        background-color: #D6C8AE;
-      }
     }
-
   }
 }
