@@ -1,6 +1,6 @@
-import DayTile from 'components/DayTile';
+import ProductTile from 'components/ProductTile';
 
-describe('EventsContainer', () => {
+describe('ProductsContainer', () => {
 
   beforeEach(() => {
     spyOn(global, 'fetch').and.callFake(url => {
@@ -14,14 +14,13 @@ describe('EventsContainer', () => {
     })
 
     wrapper = mountReactAppAt('/', function(rootDiv) {
-      rootDiv.setAttribute("data-instagram", "12345")
+      rootDiv.setAttribute('data-instagram', "12345")
     })
-
   })
 
-  it('renders DayTile components', done => {
+  it('renders ProductTile components', done => {
     setTimeout(() => {
-      expect(wrapper.find(DayTile)).toBePresent();
+      expect(wrapper.find(ProductTile)).toBePresent();
       done();
     }, 0);
   });
