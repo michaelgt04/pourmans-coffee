@@ -14,7 +14,6 @@ class InstaFeedContainer extends Component {
 
   render(){
     let photos = this.props.instaFeed.map(photo => {
-      console.log(photo)
       return(
         <PhotoTile
           key={photo.id}
