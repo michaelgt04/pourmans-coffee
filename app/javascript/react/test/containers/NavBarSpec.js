@@ -12,14 +12,26 @@ describe('NavBar', () => {
         return(createResponseFromFixture('products'))
       }
     })
+		
+		let fixture = window.__fixtures__['photos']
 
-    wrapper = mountReactAppAt('/', function(rootDiv) {
-      rootDiv.setAttribute("data-instagram", "12345")
+		spyOn($, 'ajax').and.callFake(object => {
+      object.success(fixture)
     })
 
+    wrapper = mountReactAppAt('/#products', function(rootDiv) {
+      rootDiv.setAttribute("data-instagram", "12345")
+    })
   })
 
-  it('renders AnchorLink components', () => {
-      expect(wrapper.find(AnchorLink)).toBePresent();
+  it('Does not render the nav Bar at the top of the page', () => {
+      expect(wrapper.find(AnchorLink)).not.toBePresent();
   });
+
+	xit('Renders the NavBar when it scrolls past the landing section', done => {
+		setTimeout(() => {
+			expect(wrapper.find(AnchorLink)).toBePresent();
+			done();
+		}, 0);
+	});
 });

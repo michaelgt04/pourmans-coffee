@@ -13,6 +13,12 @@ describe('ProductsContainer', () => {
       }
     })
 
+		let fixture = window.__fixtures__['photos']
+
+		spyOn($, 'ajax').and.callFake(object => {
+      object.success(fixture)
+    })
+
     wrapper = mountReactAppAt('/', function(rootDiv) {
       rootDiv.setAttribute('data-instagram', "12345")
     })
