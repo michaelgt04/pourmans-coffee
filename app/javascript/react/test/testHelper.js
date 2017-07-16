@@ -7,9 +7,9 @@ import { push, syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import $ from 'jquery'
 import 'jasmine-ajax';
+import ReactTestUtils from 'react-dom/test-utils';
 
-
-let store, page, wrapper
+let store, page, wrapper;
 
 Object.assign(global, {
   mount,
@@ -24,7 +24,8 @@ Object.assign(global, {
   createResponseFromFixture,
   mountReactAppAt,
   wrapper,
-  $
+  $,
+	ReactTestUtils
 });
 
 beforeEach(() => {
