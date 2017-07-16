@@ -5,6 +5,9 @@
     "test": "node_modules/.bin/karma start karma.conf.js",
     "start": "./bin/webpack-dev-server"
   },
+	"engines": {
+    "node": "7.9.0"
+  },
   "dependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "7.x",
