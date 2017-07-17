@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { selectAnchor, showNav, hideNav } from '../actions/selectAnchor';
+import { selectAnchor, showNav, hideNav, setWindowLocation } from '../actions/selectAnchor';
 import { configureAnchors } from 'react-scrollable-anchor';
 import AnchorLink from '../components/AnchorLink';
 
@@ -12,6 +12,7 @@ class NavBar extends Component {
   render(){
     let anchorLinks;
     document.addEventListener('scroll', () => {
+      this.props.setWindowLocation(document.body.scrollTop)
       if (document.body.scrollTop > (window.innerHeight / 1.25)) {
         this.props.showNav()
     } else {
@@ -55,7 +56,8 @@ class NavBar extends Component {
 let mapStateToProps = state => {
   return {
     selectedAnchorId: state.selectedAnchorId.selectedAnchorId,
-    showNavState: state.selectedAnchorId.showNav
+    showNavState: state.selectedAnchorId.showNav,
+    windowLocation: state.selectedAnchorId.windowLocation
   }
 }
 
@@ -69,6 +71,9 @@ let mapDispatchToProps = dispatch => {
     },
     hideNav: () => {
       dispatch(hideNav())
+    },
+    setWindowLocation: (windowLocation) => {
+      dispatch(setWindowLocation(windowLocation))
     }
   }
 }
