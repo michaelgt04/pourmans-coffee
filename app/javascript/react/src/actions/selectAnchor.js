@@ -22,3 +22,7 @@ export const hideNav = () => {
     show: false
   }
 }
+
+//state initializes with the top positionns of each section
+//onScroll dispatches new winow top location
+//Navbar checks to see what "range" current window is and sets the selected anchor accordingly

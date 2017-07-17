@@ -13,7 +13,6 @@ class NavBar extends Component {
     let anchorLinks;
     document.addEventListener('scroll', () => {
       if (document.body.scrollTop > (window.innerHeight / 1.25)) {
-        console.log('Nav Bar')
         this.props.showNav()
     } else {
         this.props.hideNav()
