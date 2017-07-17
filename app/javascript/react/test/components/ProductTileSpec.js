@@ -30,11 +30,6 @@ describe('ProductTile', () => {
     )
   })
 
-  it('renders an image with the photo url', () => {
-    expect(wrapper.find('img')).toBePresent();
-    expect(wrapper.find('img')).toHaveProp('src', 'http://nitrocoldbrew.coffeebean.com/images/NitroCB_1920x1080.jpg')
-  })
-
   it('displays the product description', () => {
     expect(wrapper.text()).toMatch('obviously the best');
   })

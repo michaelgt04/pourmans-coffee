@@ -3,7 +3,7 @@ $dark-blue: #8B95A3;
 $dark-gray: #434747;
 
 .events-section {
-  background-color: $dark-blue;
+  background-color: #F6F5F3;
   padding-bottom: 2rem;
   min-height: 100vh;
   color: darken($dark-gray, 10%);
@@ -15,9 +15,11 @@ $dark-gray: #434747;
   }
 
   .events-header {
+    font-family: 'Roboto Slab', serif;
     margin-top: 0;
     padding-top: 3rem;
-    text-align: center;
+    text-align: center; 
+    font-size: 2.5em;
   }
 
   .event-tile {
