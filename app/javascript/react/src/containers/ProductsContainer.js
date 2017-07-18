@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getProducts, hoverProduct, leaveProduct } from '../actions/getProducts';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import ProductTile from '../components/ProductTile';
+import ProductDisplay from '../components/ProductDisplay';
 
 class ProductsContainer extends Component {
   constructor(props){
@@ -14,26 +15,31 @@ class ProductsContainer extends Component {
   }
 
   render(){
-    let products = this.props.products.map(product => {
-      let onHover = () => { this.props.hoverProduct(product.id) }
-
-      return(
-        <ProductTile
-          key={product.id}
-          product={product}
-          selectedProductId={this.props.selectedProductId}
-          handleHover={onHover}
-          handleLeave={this.props.leaveProduct}
-        />
-      )
-    })
+    let drink = this.props.products.drinks
+    let food = this.props.products.food
 
     return(
       <div className='products row'>
         <ScrollableAnchor id={'products'}>
-          <h1>The Goods</h1>
+          <h2>The Goods</h2>
         </ScrollableAnchor>
-        {products}
+        <div className='small-12 medium-5 columns'>
+          <h3>Food</h3>
+          <ProductDisplay
+            hoverProduct={this.props.hoverProduct}
+            leaveProduct={this.props.leaveProduct}
+            content={food}
+          />
+        </div>
+        <img className='divider' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500245857/pourmans-divider_gw69nz.png' />
+        <div className='small-12 medium-5 columns'>
+          <h3>Drink</h3>
+          <ProductDisplay
+            hoverProduct={this.props.hoverProduct}
+            leaveProduct={this.props.leaveProduct}
+            content={drink}
+          />
+        </div>
       </div>
     )
   }
