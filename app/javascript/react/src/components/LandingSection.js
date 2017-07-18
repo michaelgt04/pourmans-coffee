@@ -11,7 +11,9 @@ class LandingSection extends Component {
           </div>
         </ScrollableAnchor>
         <img className='logo' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1496790582/Pourman_s_Logo_yzyag0.png' />
-        <i className="fa fa-chevron-down nav-down" aria-hidden="true"></i>
+        <a href="#find-us" className="down-arrow-link">
+          <i className="fa fa-chevron-down nav-down" aria-hidden="true"></i>
+        </a>
       </div>
     )
   }
