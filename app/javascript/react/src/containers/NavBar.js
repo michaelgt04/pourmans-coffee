@@ -45,7 +45,7 @@ class NavBar extends Component {
 
     return(
       <div className="navbar">
-        <ul className="links show-for-large">
+        <ul className="links">
           {anchorLinks}
         </ul>
       </div>
