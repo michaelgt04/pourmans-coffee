@@ -22,6 +22,10 @@
     };
   }
 
+  .down-arrow-link {
+    text-decoration: none;
+  }
+
   .nav-down {
     font-size: 3rem;
     color: #434747;
@@ -32,7 +36,7 @@
     @include breakpoint(medium) {
       margin: 10% 45% 0;
       font-size: 4rem;
-      color: #D6C8AE;
+      color: #F6F5F3;
       background-color: #434747;
       border-radius: 10%;
       padding-bottom: 1%;
@@ -40,7 +44,7 @@
 
     @include breakpoint(large) {
       font-size: 5rem;
-      color: #D6C8AE;
+      color: #F6F5F3;
       background-color: #434747;
       right: 3.5%;
       position: absolute;
@@ -50,4 +54,9 @@
       border-radius: 10%;
     }
   }
+
+    .nav-down:hover {
+      color: #434747;
+      background-color: #F6F5F3 ;
+    }
 }
