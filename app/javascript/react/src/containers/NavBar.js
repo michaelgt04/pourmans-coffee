@@ -10,6 +10,7 @@ class NavBar extends Component {
   }
 
   render(){
+    console.log(this.props.windowLocation)
     let anchorLinks;
     document.addEventListener('scroll', () => {
       this.props.setWindowLocation(document.body.scrollTop)
