@@ -1,7 +1,13 @@
+@import 'breakpoint';
+
 .instagram {
   padding: 2rem;
-  background-color: #F6F5F3; 
+  background-color: #F6F5F3;
   min-height: 25vh;
+
+  @include breakpoint(instaPadding){
+    padding-right: 13%;
+  }
 
   .instagram-photo{
     padding: .5rem;
