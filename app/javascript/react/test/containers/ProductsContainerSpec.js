@@ -1,4 +1,5 @@
 import ProductTile from 'components/ProductTile';
+import ProductDisplay from 'components/ProductDisplay';
 
 describe('ProductsContainer', () => {
 
@@ -26,7 +27,7 @@ describe('ProductsContainer', () => {
 
   it('renders ProductTile components', done => {
     setTimeout(() => {
-      expect(wrapper.find(ProductTile)).toBePresent();
+      expect(wrapper.find(ProductDisplay).find(ProductTile)).toBePresent();
       done();
     }, 0);
   });
