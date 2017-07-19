@@ -1,8 +1,9 @@
-import { SELECT_ANCHOR, SHOW_NAV, HIDE_NAV } from '../actions/selectAnchor';
+import { SELECT_ANCHOR, SHOW_NAV, HIDE_NAV, WINDOW_LOCATION } from '../actions/selectAnchor';
 
 let initialState = {
   selectedAnchorId: null,
-  showNav: false
+  showNav: false,
+  windowLocation: 0
 }
 
 export const AnchorReducer = (state = initialState, action) => {
@@ -16,6 +17,9 @@ export const AnchorReducer = (state = initialState, action) => {
       return Object.assign({}, state, newState)
     case HIDE_NAV:
       newState = { showNav: action.show }
+      return Object.assign({}, state, newState)
+    case WINDOW_LOCATION:
+      newState = { windowLocation: action.windowLocation }
       return Object.assign({}, state, newState)
     default:
       return state
