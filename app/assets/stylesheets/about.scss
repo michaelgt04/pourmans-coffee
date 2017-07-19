@@ -3,9 +3,14 @@ $light-blue: #E6EDF7;
 
 .about-us-section{
   background-image: url('http://res.cloudinary.com/dpuzgzqir/image/upload/v1497541257/coffee-beans_kenwxf.jpg');
+  // background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
   min-width: 100vw;
-  background-attachment: fixed;
+
+  @include breakpoint(small){
+    background-attachment: scroll;
+  }
 
   .overlay {
     background-color: $light-blue;
