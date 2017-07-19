@@ -32,8 +32,9 @@ class EventsContainer extends Component {
     return(
       <div className="events-section">
         <ScrollableAnchor id={"find-us"}>
-          <h2 className="events-header">Where to Find Us</h2>
+          <div className="events-anchor"></div>
         </ScrollableAnchor>
+          <h2 className="events-header">Where to Find Us</h2>
         <div className="row days-wrapper">
           {eventDays}
         </div>

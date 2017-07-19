@@ -21,8 +21,9 @@ class ProductsContainer extends Component {
     return(
       <div className='products row'>
         <ScrollableAnchor id={'products'}>
-          <h2>The Goods</h2>
+          <div className='products-anchor'></div>
         </ScrollableAnchor>
+          <h2>The Goods</h2>
         <div className='small-10 medium-4 small-offset-1 columns food'>
           <img className='header-icon' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500397705/muffin.png' />
           <ProductDisplay
