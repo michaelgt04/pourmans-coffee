@@ -33,7 +33,7 @@ class ProductsContainer extends Component {
           />
         </div>
         <div className='medium-2 columns'>
-          <img className='divider hide-for-small-only' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500245857/pourmans-divider_gw69nz.png' />
+          <img className='divider hide-for-small-only' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500492181/pourmans-divider.png' />
         </div>
         <div className='small-10 medium-4 small-offset-1 medium-offset-0 columns end drink'>
           <img className='header-icon drink' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500419840/coffee-cup.png' />
