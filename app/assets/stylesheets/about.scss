@@ -19,21 +19,29 @@ $light-blue: #E6EDF7;
     margin: auto;
     text-align: justify;
     padding: 10% 0;
+
+    @include breakpoint(large){
+      margin: 0 10% 0 6%;
+    }
   }
 
   .about-header {
     font-size: 2.5em;
+    font-family: 'Pathway Gothic One';
+    text-transform: uppercase;
+    letter-spacing: .30rem;
   }
 
   .blurb {
-    font-size: 1.25em;
+    font-size: 1em;
+    font-family: 'Open Sans';
 
     @include breakpoint(medium){
-      font-size: 1.5em;
+      font-size: 1.25em;
     }
 
     @include breakpoint(large){
-      font-size: 1.5em;
-    };
+      font-size: 1.25em;
+    }
   }
 }
