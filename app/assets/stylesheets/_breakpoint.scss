@@ -8,4 +8,10 @@
     @else if $point == large {
      @media screen and (min-width: 64em) { @content ; }
   }
+    @else if $point == instaPadding {
+      @media (min-width: 63.9375em) and (max-width: 79em) { @content ; }
+    }
+    @else if $point == eventPadding {
+      @media (min-width: 63.9375em) and (max-width: 70em) { @content ; }
+    }
 }
