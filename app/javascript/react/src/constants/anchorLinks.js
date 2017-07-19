@@ -21,11 +21,6 @@ const anchorLinks = [
   },
   {
     id: 5,
-    anchor: "#instagram",
-    text: "Instagram"
-  },
-  {
-    id: 6,
     anchor: "#contact",
     text: "Contact"
   }
