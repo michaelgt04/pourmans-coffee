@@ -23,7 +23,12 @@
     max-height: 30rem;
     text-align: center;
     display: block;
-    padding-top: 4rem;
+    padding-top: 6rem;
+    
+    @include breakpoint(medium){
+     padding-top: 8rem; 
+     max-height: 40rem;
+    }
   }
 
   .food {
@@ -50,6 +55,10 @@
 
       @include breakpoint(small){
         min-height: 13rem;
+      }
+      
+      @include breakpoint(medium){
+        height: 14rem; 
       }
 
       h3 {
@@ -84,6 +93,10 @@
 
       @include breakpoint(small){
         min-height: 13rem;
+      }
+      
+      @include breakpoint(medium){
+        height: 14rem; 
       }
 
       h3 {
