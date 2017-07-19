@@ -11,7 +11,7 @@ const DayTile = props => {
     )
   });
   return(
-    <div className="columns small-12 medium-6">
+    <div className="columns small-12 medium-3 end">
       <div className="day-tile-background">
         <h3>{props.day}</h3>
         <div>
