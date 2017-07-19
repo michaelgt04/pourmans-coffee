@@ -2,6 +2,8 @@ $light-blue: #E6EDF7;
 $dark-blue: #8B95A3;
 $dark-gray: #434747;
 
+@import 'breakpoint';
+
 .events-section {
   background-color: #F6F5F3;
   padding-bottom: 2rem;
@@ -51,6 +53,12 @@ $dark-gray: #434747;
     bottom: 3rem;
     transform: translateX(50%);
     left: 50%;
+  }
+
+  .days-wrapper {
+    @include breakpoint(eventPadding){
+      margin-right: 10%;
+    }
   }
 
 }
