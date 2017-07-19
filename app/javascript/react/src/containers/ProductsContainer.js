@@ -23,17 +23,19 @@ class ProductsContainer extends Component {
         <ScrollableAnchor id={'products'}>
           <h2>The Goods</h2>
         </ScrollableAnchor>
-        <div className='small-12 medium-5 columns'>
-          <h3>Food</h3>
+        <div className='small-10 medium-4 small-offset-1 columns food'>
+          <img className='header-icon' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500397705/muffin.png' />
           <ProductDisplay
             hoverProduct={this.props.hoverProduct}
             leaveProduct={this.props.leaveProduct}
             content={food}
           />
         </div>
-        <img className='divider' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500245857/pourmans-divider_gw69nz.png' />
-        <div className='small-12 medium-5 columns'>
-          <h3>Drink</h3>
+        <div className='medium-2 columns'>
+          <img className='divider hide-for-small-only' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500245857/pourmans-divider_gw69nz.png' />
+        </div>
+        <div className='small-10 medium-4 small-offset-1 medium-offset-0 columns end drink'>
+          <img className='header-icon drink' src='https://res.cloudinary.com/duor0bzmo/image/upload/v1500419840/coffee-cup.png' />
           <ProductDisplay
             hoverProduct={this.props.hoverProduct}
             leaveProduct={this.props.leaveProduct}
