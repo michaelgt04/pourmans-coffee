@@ -25,7 +25,7 @@ class InstaFeedContainer extends Component {
 
     return(
       <div className="instagram">
-        <ScrollableAnchor id={"instagram"}>
+        <ScrollableAnchor id={"contact"}>
           <div className="instagram-anchor">
           </div>
         </ScrollableAnchor>
