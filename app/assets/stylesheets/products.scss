@@ -41,9 +41,13 @@
     padding-right: 5%;
 
     .product-tile {
-      padding: .5rem;
+      padding: 15px;
       height: 10rem;
       text-align: left;
+
+      @include breakpoint(small){
+        min-height: 13rem; 
+      }
 
       h3 {
         font-family: 'Pathway Gothic One', cursive;
@@ -71,9 +75,13 @@
 
   .food{
     .product-tile {
-      padding: .5rem;
+      padding: 15px;
       height: 10rem;
       text-align: right;
+     
+      @include breakpoint(small){
+        min-height: 13rem; 
+      }
 
       h3 {
         font-family: 'Pathway Gothic One', cursive;
@@ -93,7 +101,6 @@
       p {
         font-size: 1.1rem;
         font-family: 'Roboto Slab';
-        padding: 0;
         letter-spacing: .6px;
       }
     }
