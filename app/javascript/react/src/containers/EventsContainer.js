@@ -37,6 +37,7 @@ class EventsContainer extends Component {
         <div className="row">
           {eventDays}
         </div>
+        <img src="https://res.cloudinary.com/duor0bzmo/image/upload/v1500430017/flamingo_ds9qj7.png" className="flamingo hide-for-small-only" />
       </div>
     )
   }
