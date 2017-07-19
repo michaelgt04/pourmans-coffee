@@ -12,18 +12,34 @@ class NavBar extends Component {
   render(){
     let anchorLinks;
     document.addEventListener('scroll', () => {
-      if (document.body.scrollTop > (window.innerHeight / 1.25)) {
+      let scrollPosition = document.body.scrollTop
+      if (scrollPosition > (window.innerHeight / 1.25)) {
         this.props.showNav()
     } else {
         this.props.hideNav()
     }})
 
+    document.addEventListener('scroll', () => {
+      let scrollPosition = document.body.scrollTop
+      let offset = window.innerHeight * .25
+      let eventsBreakpoint = document.getElementsByClassName('events-section')[0].offsetTop - offset
+      let aboutBreakpoint = document.getElementsByClassName('about-text')[0].offsetTop - offset
+      let productBreakpoint = document.getElementsByClassName('products-section')[0].offsetTop - offset
+      let contactBreakpoint = document.getElementsByClassName('contact-anchor')[0].offsetTop - offset
+
+      if(scrollPosition > eventsBreakpoint && scrollPosition < aboutBreakpoint){
+        this.props.selectAnchor(2) 
+      } else if (scrollPosition > aboutBreakpoint && scrollPosition < productBreakpoint){
+        this.props.selectAnchor(3) 
+      } else if (scrollPosition > productBreakpoint && scrollPosition < contactBreakpoint){
+        this.props.selectAnchor(4) 
+      } else if (scrollPosition > contactBreakpoint){
+        this.props.selectAnchor(5) 
+      }
+    })
+
     if (this.props.showNavState) {
       anchorLinks = this.props.links.map(link => {
-        let handleClick = () => {
-          this.props.selectAnchor(link.id)
-        }
-
         let selectedClass;
         if(link.id === this.props.selectedAnchorId){
           selectedClass = "selected"
@@ -36,7 +52,6 @@ class NavBar extends Component {
           anchor={link.anchor}
           text={link.text}
           selectedClass={selectedClass}
-          handleClick={handleClick}
           />
         )
       })
