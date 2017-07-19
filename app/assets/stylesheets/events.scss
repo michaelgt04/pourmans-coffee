@@ -13,6 +13,10 @@ $dark-gray: #434747;
 
   .events-anchor {
     padding: 8% 0;
+    
+    @include breakpoint(large){
+      padding: 2%;
+    }
   }
 
   h3 {
