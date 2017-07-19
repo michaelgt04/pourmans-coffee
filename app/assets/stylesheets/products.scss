@@ -19,7 +19,8 @@
     padding-top: 6rem;
     
     @include breakpoint(medium){
-     padding-top: 13rem; 
+     padding-top: 8rem; 
+     max-height: 40rem;
     }
   }
 
@@ -48,7 +49,7 @@
       }
       
       @include breakpoint(medium){
-        min-height: 13rem; 
+        height: 14rem; 
       }
       
       h3 {
@@ -86,7 +87,7 @@
       }
       
       @include breakpoint(medium){
-        min-height: 13rem; 
+        height: 14rem; 
       }
 
       h3 {
