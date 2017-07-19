@@ -21,25 +21,25 @@ Product.create(
 
 Product.create(
   title: "Chocolate Chunk Cookie",
-  description: "There's nothing better than a well executed, simply done chocolate chunk cookie."
+  description: "There's nothing better than a well executed, simply done chocolate chunk cookie.",
   group: "food"
 )
 
 Product.create(
   title: "Coconut Cold Brew Coffee",
-  description: "This will be the best coffee you've ever had. I mean it has pounds of coconut in it."
+  description: "This will be the best coffee you've ever had. I mean it has pounds of coconut in it.",
   group: "drink"
 )
 
 Product.create(
   title: "Classic Cold Brew Coffee",
-  description: "Just in case you don't like coconut. Smooth as silk from our nitro taps."
+  description: "Just in case you don't like coconut. Smooth as silk from our nitro taps.",
   group: "drink"
 )
 
 Product.create(
   title: "Watermelon Agua Fresca",
-  description: "Incredibly refreshing summer drink for when Boston starts to feel like a swamp."
+  description: "Incredibly refreshing summer drink for when Boston starts to feel like a swamp.",
   group: "drink"
 )
 
