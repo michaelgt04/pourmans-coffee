@@ -50,7 +50,7 @@
       padding: 15px;
       height: 12rem;
       text-align: left;
-      padding-right: 1rem;
+      padding-right: 2rem;
 
       @include breakpoint(small){
         min-height: 13rem;
@@ -90,7 +90,7 @@
       padding: 15px;
       height: 12rem;
       text-align: right;
-      padding-right: 1rem;
+      padding-right: 2rem;
 
       @include breakpoint(small){
         min-height: 13rem;
