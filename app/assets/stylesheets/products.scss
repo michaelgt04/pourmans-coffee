@@ -46,7 +46,6 @@
   }
 
   .drink {
-
     .product-tile {
       padding: 15px;
       height: 10rem;
@@ -58,6 +57,7 @@
       }
       
       @include breakpoint(medium){
+        padding-right: 0;
         height: 18rem; 
       }
 
@@ -97,6 +97,7 @@
       }
       
       @include breakpoint(medium){
+        padding-right: 0;
         height: 18rem; 
       }
 
