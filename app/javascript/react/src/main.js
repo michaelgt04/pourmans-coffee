@@ -10,7 +10,6 @@ import { configureStore } from './store/configureStore';
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store)
 
-
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Root store={store}
