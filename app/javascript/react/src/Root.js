@@ -5,6 +5,7 @@ import Puppies from './containers/Puppies';
 import App from './components/App';
 import AdminInterface from './admin/components/AdminInterface';
 import AdminDashboardContainer from './admin/containers/AdminDashboardContainer';
+import AdminEventsContainer from './admin/containers/AdminEventsContainer';
 
 const Root = props => {
   return(
@@ -13,6 +14,7 @@ const Root = props => {
         <Route path="/" component={App} />
         <Route path="/admin" component={AdminInterface}>
           <IndexRoute component={AdminDashboardContainer} />
+          <Route path='events' component={AdminEventsContainer}/>
         </Route>
       </Router>
     </Provider>
