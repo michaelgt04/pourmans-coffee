@@ -67,7 +67,7 @@ describe Api::V1::ProductsController do
 
   describe "DELETE #destroy" do
     it "returns the deleted product as JSON" do
-      delete :destory, params: { id: food.id }
+      delete :destroy, params: { id: food.id }
 
       expect(response).to have_http_status(:ok)
       expect(response.content_type).to eq("application/json")
@@ -76,7 +76,8 @@ describe Api::V1::ProductsController do
     end
 
     it "successfully deletes a product" do
-      expect { delete :destroy, params: { id: food.id } }.to change{ Product.count }.by 1
+
+      expect { delete :destroy, params: { id: food.id } }.to change{ Product.count }.by -1
     end
   end
 end
