@@ -5,7 +5,8 @@
       "day": "Tuesday",
       "start_time": "12:00",
       "end_time": "3:00",
-      "location": "Dewey Square"
+      "location": "Dewey Square",
+      "note": "Every other week"
     }
   ],
   "Monday": [
@@ -14,14 +15,16 @@
       "day": "Monday",
       "start_time": "12:00",
       "end_time": "3:00",
-      "location": "Dewey Square"
+      "location": "Dewey Square",
+      "note": "Every other week and other"
     },
     {
       "id": 4,
       "day": "Monday",
       "start_time": "5:00",
       "end_time": "10:00",
-      "location": "Framingham"
+      "location": "Framingham",
+      "note": null
     }
   ],
   "Friday": [
@@ -30,7 +33,8 @@
       "day": "Friday",
       "start_time": "12:00",
       "end_time": "3:00",
-      "location": "Dewey Square"
+      "location": "Dewey Square",
+      "note": null
     }
   ]
 }
