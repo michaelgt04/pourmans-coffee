@@ -23,6 +23,12 @@ class Api::V1::ProductsController < Api::ApiController
     end
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    render json: product
+  end
+
   private
 
   def product_params
