@@ -1,5 +1,5 @@
-import EventTile from 'components/EventTile';
-import DayTile from 'components/DayTile';
+import EventTile from 'consumer/components/EventTile';
+import DayTile from 'consumer/components/DayTile';
 
 describe('DayTile', () => {
 

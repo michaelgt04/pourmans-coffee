@@ -1,6 +1,6 @@
-import LandingSection from 'components/LandingSection';
-import EventsContainer from 'containers/EventsContainer';
-import App from 'components/App';
+import LandingSection from 'consumer/components/LandingSection';
+import EventsContainer from 'consumer/containers/EventsContainer';
+import App from 'consumer/components/App';
 
 describe('App', () => {
 
