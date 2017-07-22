@@ -3,11 +3,6 @@ import Footer from 'components/Footer';
 describe('Footer', () => {
 
   beforeEach(() => {
-    let about = [{
-      id: 1,
-      blurb: "dope!"
-    }]
-
     wrapper = shallow(
       <Footer />
     )
@@ -26,6 +21,6 @@ describe('Footer', () => {
   })
 
   it('displays the contact phone number', () => {
-    expect(wrapper.text()).toMatch("781 439 7245")
+    expect(wrapper.text()).toMatch("439-7245")
   })
 })

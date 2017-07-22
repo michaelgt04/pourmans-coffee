@@ -6,6 +6,7 @@ import { ProductsReducer } from './products'
 import { InstaFeedReducer } from './instaFeed';
 import { AnchorReducer } from './anchors';
 import { routerReducer as routing } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 
 
 const rootReducer = combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   about: AboutReducer,
   products: ProductsReducer,
   instagram: InstaFeedReducer,
-  selectedAnchorId: AnchorReducer
+  selectedAnchorId: AnchorReducer,
+  form: formReducer
 });
 
 export default rootReducer;
