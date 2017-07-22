@@ -1,4 +1,4 @@
-import DayTile from 'components/DayTile';
+import DayTile from 'consumer/components/DayTile';
 
 describe('EventsContainer', () => {
 
@@ -9,12 +9,12 @@ describe('EventsContainer', () => {
       } else if (url.endsWith('/api/v1/events')){
         return(createResponseFromFixture('events'))
       } else if (url.endsWith('/api/v1/products')){
-        return(createResponseFromFixture('products')) 
+        return(createResponseFromFixture('products'))
       }
     })
-    
+
     let fixture = window.__fixtures__['photos']
-    
+
     spyOn($, 'ajax').and.callFake(object => {
       object.success(fixture)
     })

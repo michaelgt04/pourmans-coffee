@@ -1,5 +1,5 @@
-import ProductTile from 'components/ProductTile';
-import ProductDisplay from 'components/ProductDisplay';
+import ProductTile from 'consumer/components/ProductTile';
+import ProductDisplay from 'consumer/components/ProductDisplay';
 
 describe('ProductsContainer', () => {
 

@@ -1,4 +1,4 @@
-import AnchorLink from 'components/AnchorLink';
+import AnchorLink from 'consumer/components/AnchorLink';
 
 describe('NavBar', () => {
 
@@ -12,7 +12,7 @@ describe('NavBar', () => {
         return(createResponseFromFixture('products'))
       }
     })
-		
+
 		let fixture = window.__fixtures__['photos']
 
 		spyOn($, 'ajax').and.callFake(object => {
