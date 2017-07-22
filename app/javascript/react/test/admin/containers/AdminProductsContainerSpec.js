@@ -10,7 +10,8 @@ describe('AdminProductsContainer', () => {
     wrapper = mountReactAppAt('/admin/products')
   })
 
-  it('renders GroupTile components', () => {
+  it('renders GroupTile components for each group', () => {
     expect(wrapper.find(GroupTile)).toBePresent();
+    expect(wrapper.find(GroupTile).length).toEqual(2)
   })
 });
