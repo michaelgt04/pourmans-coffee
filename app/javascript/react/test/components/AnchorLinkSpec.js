@@ -22,10 +22,4 @@ describe('AnchorLink', () => {
   it('renders the text of the link name', () => {
     expect(wrapper.text()).toMatch('coffee tho')
   })
-
-  it('triggers the onClick function when clicked', () => {
-    wrapper.simulate('click');
-
-    expect(onClick).toHaveBeenCalled()
-  })
 })
