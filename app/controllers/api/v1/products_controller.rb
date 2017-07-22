@@ -23,6 +23,9 @@ class Api::V1::ProductsController < Api::ApiController
     end
   end
 
+  def destroy
+  end
+
   private
 
   def product_params
