@@ -6,6 +6,7 @@ const EventTile = props => {
       <span><strong>{props.location}</strong></span>
       <span>Start Time: {props.startTime}</span>
       <span>End Time: {props.endTime}</span>
+      <span>Note: {props.note}</span>
     </div>
   )
 }
