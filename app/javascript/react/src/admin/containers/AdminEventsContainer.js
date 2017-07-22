@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import AdminEventForm from '../components/AdminEventForm'
 
 class AdminEventsContainer extends Component{
   render(){
     return(
-      <h1>I Will Show Events</h1>
+      <div>
+        <h1>I Will Show Events</h1>
+        <AdminEventForm />
+      </div>
     )
   }
 }
