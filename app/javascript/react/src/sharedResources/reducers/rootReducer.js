@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { EventsReducer } from '../../consumer/reducers/events';
-import { AboutReducer } from '../../consumer/reducers/about';
+import { AboutReducer } from '../../sharedResources/reducers/about';
 import { ProductsReducer } from '../../consumer/reducers/products'
 import { InstaFeedReducer } from '../../consumer/reducers/instaFeed';
 import { AnchorReducer } from '../../consumer/reducers/anchors';

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/admin" => "admin#index"
   get "/admin/events" => "admin#index"
   get "/admin/products" => "admin#index"
+  get "/admin/about" => "admin#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :api do
