@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchAbout } from '../../sharedResources/actions/getAbout';
-import ScrollableAnchor from 'react-scrollable-anchor';
 import AboutTile from '../components/AboutTile';
 
-class AboutUsContainer extends Component {
-  constructor(props){
+class AdminAboutContainer extends Component{
+  constructor(props) {
     super(props);
   }
 
@@ -15,11 +14,8 @@ class AboutUsContainer extends Component {
 
   render(){
     return(
-      <div className="about-us-section">
-        <ScrollableAnchor id={"about"}>
-          <div className="about-anchor">
-          </div>
-        </ScrollableAnchor>
+      <div>
+        <h1>{`About Us:`}</h1>
         <AboutTile
           about={this.props.about}
         />
@@ -42,4 +38,4 @@ let mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AboutUsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminAboutContainer);

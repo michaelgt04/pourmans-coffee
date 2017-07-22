@@ -9,6 +9,7 @@ const AdminInterface = props => {
       <Link to='/admin'>Home</Link>
       <Link to='/admin/events'>Events</Link>
       <Link to='/admin/products'>Products</Link>
+      <Link to='/admin/about'>About</Link>
       {props.children}
     </div>
   )
