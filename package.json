@@ -5,7 +5,7 @@
     "test": "node_modules/.bin/karma start karma.conf.js",
     "start": "./bin/webpack-dev-server"
   },
-	"engines": {
+  "engines": {
     "node": "7.9.0"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
     "react-scrollable-anchor": "^0.4.2",
     "redux": "^3.6.0",
     "redux-devtools": "^3.4.0",
+    "redux-form": "^7.0.1",
     "redux-thunk": "^2.2.0",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.5",
