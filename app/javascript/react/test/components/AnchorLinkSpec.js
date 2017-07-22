@@ -1,4 +1,4 @@
-import AnchorLink from 'components/AnchorLink';
+import AnchorLink from 'consumer/components/AnchorLink';
 
 describe('AnchorLink', () => {
   let onClick;
