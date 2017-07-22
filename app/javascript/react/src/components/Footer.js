@@ -18,7 +18,7 @@ const Footer = props => {
           <span className="email">pourmanscoffee@gmail.com</span><br />
         </a>
         <i className="fa fa-phone" aria-hidden="true"></i>
-        <span className="phone"> (781) 439-7245 </span>
+        <span className="phone"> (781) 439-7245</span>
       </div>
     </div>
   )
