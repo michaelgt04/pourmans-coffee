@@ -6,6 +6,7 @@ import App from './consumer/components/App';
 import AdminInterface from './admin/components/AdminInterface';
 import AdminDashboardContainer from './admin/containers/AdminDashboardContainer';
 import AdminEventsContainer from './admin/containers/AdminEventsContainer';
+import AdminProductsContainer from './admin/containers/AdminProductsContainer';
 
 const Root = props => {
   return(
@@ -15,6 +16,7 @@ const Root = props => {
         <Route path="/admin" component={AdminInterface}>
           <IndexRoute component={AdminDashboardContainer} />
           <Route path='events' component={AdminEventsContainer}/>
+          <Route path='products' component={AdminProductsContainer}/>
         </Route>
       </Router>
     </Provider>
