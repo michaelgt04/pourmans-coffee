@@ -48,8 +48,7 @@ class ProductsContainer extends Component {
 
 let mapStateToProps = state => {
   return {
-    products: state.products.products,
-    selectedProductId: state.products.productId
+    products: state.products.products
   }
 }
 
