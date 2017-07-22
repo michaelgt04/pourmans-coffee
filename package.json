@@ -5,7 +5,7 @@
     "test": "node_modules/.bin/karma start karma.conf.js",
     "start": "./bin/webpack-dev-server"
   },
-	"engines": {
+  "engines": {
     "node": "7.9.0"
   },
   "dependencies": {
@@ -48,7 +48,8 @@
     "webpack": "^2.6.1",
     "webpack-manifest-plugin": "^1.1.0",
     "webpack-merge": "^4.1.0",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "yarn": "^0.27.5"
   },
   "devDependencies": {
     "enzyme": "^2.8.2",
