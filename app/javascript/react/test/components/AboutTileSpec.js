@@ -1,4 +1,4 @@
-import AboutTile from 'components/AboutTile';
+import AboutTile from 'consumer/components/AboutTile';
 
 describe('AboutTile', () => {
 

@@ -1,4 +1,4 @@
-import LandingSection from 'components/LandingSection';
+import LandingSection from 'consumer/components/LandingSection';
 
 describe('LandingSection', () => {
 
