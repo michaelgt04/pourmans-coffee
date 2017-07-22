@@ -64,4 +64,20 @@ describe Api::V1::ProductsController do
       expect(json_parsed_response["errors"]).to eq ["Title can't be blank"]
     end
   end
+
+  describe "DELETE #destroy" do
+    it "returns the deleted product as JSON" do
+      delete :destroy, params: { id: food.id }
+
+      expect(response).to have_http_status(:ok)
+      expect(response.content_type).to eq("application/json")
+      expect(json_parsed_response.keys).to eq ["id", "title", "description", "group"]
+      expect(json_parsed_response["id"]).to eq food.id
+    end
+
+    it "successfully deletes a product" do
+
+      expect { delete :destroy, params: { id: food.id } }.to change{ Product.count }.by -1
+    end
+  end
 end
