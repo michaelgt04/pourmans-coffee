@@ -13,4 +13,6 @@ RSpec.describe Event, type: :model do
 
   it { should have_valid(:location).when("Dewey Square", "Post Office Square") }
   it { should_not have_valid(:location).when(nil) }
+
+  it { should have_valid(:note).when("Every other week", nil) }
 end
