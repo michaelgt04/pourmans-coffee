@@ -5,7 +5,6 @@ import { postProduct } from '../actions/postProduct';
 
 let validate = values => {
   const errors = {};
-  console.log(values)
 
   if (!values.group){
     errors.group = 'Please choose food or drink!'
@@ -27,7 +26,6 @@ let validate = values => {
 }
 
 let onSubmit = (values, dispatch) => {
-  console.log(values)
   dispatch(postProduct(values))
 }
 

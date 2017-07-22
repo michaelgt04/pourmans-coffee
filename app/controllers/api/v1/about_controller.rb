@@ -1,5 +1,5 @@
 class Api::V1::AboutController < Api::ApiController
-
+  
   def index
     about = About.all.first
 
