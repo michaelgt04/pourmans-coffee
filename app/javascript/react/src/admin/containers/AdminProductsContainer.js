@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getProducts } from '../actions/getProducts';
 import GroupTile from '../components/GroupTile';
+import AdminProductForm from '../components/AdminProductForm';
 
 class AdminProductsContainer extends Component {
   constructor(props){
@@ -25,6 +26,7 @@ class AdminProductsContainer extends Component {
           name="Food"
           products={this.props.products.food}
         />
+        <AdminProductForm />
       </div>
     )
   }
