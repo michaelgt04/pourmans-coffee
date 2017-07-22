@@ -1,17 +1,15 @@
 import { combineReducers } from 'redux';
-import { GifsReducer } from './gifs';
-import { EventsReducer } from './events';
-import { AboutReducer } from './about';
-import { ProductsReducer } from './products'
-import { InstaFeedReducer } from './instaFeed';
-import { AnchorReducer } from './anchors';
+import { EventsReducer } from '../../consumer/reducers/events';
+import { AboutReducer } from '../../consumer/reducers/about';
+import { ProductsReducer } from '../../consumer/reducers/products'
+import { InstaFeedReducer } from '../../consumer/reducers/instaFeed';
+import { AnchorReducer } from '../../consumer/reducers/anchors';
 import { routerReducer as routing } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 
 
 const rootReducer = combineReducers({
   routing,
-  puppies: GifsReducer,
   events: EventsReducer,
   about: AboutReducer,
   products: ProductsReducer,

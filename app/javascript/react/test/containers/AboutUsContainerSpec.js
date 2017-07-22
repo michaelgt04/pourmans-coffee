@@ -1,4 +1,4 @@
-import AboutTile from 'components/AboutTile';
+import AboutTile from 'consumer/components/AboutTile';
 
 describe('AboutUsContainer', () => {
 
@@ -9,12 +9,12 @@ describe('AboutUsContainer', () => {
       } else if (url.endsWith('/api/v1/events')){
         return(createResponseFromFixture('events'))
       } else if (url.endsWith('/api/v1/products')){
-        return(createResponseFromFixture('products')) 
+        return(createResponseFromFixture('products'))
       }
     })
-    
+
     let fixture = window.__fixtures__['photos']
-    
+
     spyOn($, 'ajax').and.callFake(object => {
       object.success(fixture)
     })

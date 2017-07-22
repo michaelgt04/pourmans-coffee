@@ -1,4 +1,4 @@
-import EventTile from 'components/EventTile';
+import EventTile from 'consumer/components/EventTile';
 
 describe('EventTile', () => {
 
