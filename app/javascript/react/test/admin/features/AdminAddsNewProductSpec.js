@@ -27,4 +27,22 @@ describe('test/admin/features/AdminAddsNewProductSpec', () => {
       }, 0)
     })
   })
+
+  describe('when an admin adds a new product unsuccessfully', () => {
+    it('renders errors and does not submit the product', done => {
+      setTimeout(() => {
+        fillIn('title', { with: 'a giant cookie' }, wrapper)
+        select('food', { from: 'group' }, wrapper)
+
+        let submitButton = wrapper.find('.product-submit-button');
+
+        simulateIfPresent(submitButton, 'submit');
+
+        expect(wrapper.text()).toMatch("Please enter a description")
+        expect(wrapper.text()).not.toMatch("a giant cookie")
+
+        done();
+      }, 0)
+    })
+  })
 })
