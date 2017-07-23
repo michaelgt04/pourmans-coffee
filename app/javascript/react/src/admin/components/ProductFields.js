@@ -38,7 +38,7 @@ const ProductFields = props => {
       <Field name='group' component={GroupSelect} />
 
       {props.error && <strong>{props.error}</strong>}
-      <button type='submit'>Submit</button>
+      <button className='product-submit-button'type='submit'>Submit</button>
     </form>
   )
 }
