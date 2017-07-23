@@ -3,6 +3,10 @@ import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
 import mountReactAppAt from './support/mountReactAppAt';
 import createResponseFromFixture from './support/createResponseFromFixture';
+import simulateIfPresent from './support/simulateIfPresent';
+import fillIn from './support/fillIn';
+import select from './support/select';
+import stubGlobalFetch from './support/stubGlobalFetch';
 import { push, syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import $ from 'jquery'
@@ -23,6 +27,10 @@ Object.assign(global, {
   push,
   createResponseFromFixture,
   mountReactAppAt,
+  simulateIfPresent,
+  fillIn,
+  select,
+  stubGlobalFetch,
   wrapper,
   $,
 	ReactTestUtils
