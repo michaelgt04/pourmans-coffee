@@ -11,7 +11,7 @@ const ProductTile = props => {
     <div>
       <p>{props.product.title}</p>
       <p>{props.product.description}</p>
-      <button onClick={handleDeleteClick}>Delete</button>
+      <button className="delete-button" onClick={handleDeleteClick}>Delete</button>
     </div>
   )
 }

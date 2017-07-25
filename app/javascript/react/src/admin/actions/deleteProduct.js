@@ -10,8 +10,10 @@ export const deleteProduct = (productId, dispatch) => {
     })
     .then(response => {
       let product = response.json()
+      debugger;
       return product;
     }).then(product => {
+      debugger;
       dispatch(deleteProductSuccess(product))
     }).catch(error => {
       console.log(error)
