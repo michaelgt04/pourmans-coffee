@@ -25,16 +25,16 @@ class NavBar extends Component {
       let eventsBreakpoint = document.getElementsByClassName('events-section')[0].offsetTop - offset
       let aboutBreakpoint = document.getElementsByClassName('about-text')[0].offsetTop - offset
       let productBreakpoint = document.getElementsByClassName('products-section')[0].offsetTop - offset
-      let contactBreakpoint = document.getElementsByClassName('contact-anchor')[0].offsetTop - offset
+      let contactBreakpoint = document.getElementsByClassName('contact-anchor')[0].offsetTop - offset * 1.75
 
       if(scrollPosition > eventsBreakpoint && scrollPosition < aboutBreakpoint){
-        this.props.selectAnchor(2) 
+        this.props.selectAnchor(2)
       } else if (scrollPosition > aboutBreakpoint && scrollPosition < productBreakpoint){
-        this.props.selectAnchor(3) 
+        this.props.selectAnchor(3)
       } else if (scrollPosition > productBreakpoint && scrollPosition < contactBreakpoint){
-        this.props.selectAnchor(4) 
+        this.props.selectAnchor(4)
       } else if (scrollPosition > contactBreakpoint){
-        this.props.selectAnchor(5) 
+        this.props.selectAnchor(5)
       }
     })
 
