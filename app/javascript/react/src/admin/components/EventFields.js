@@ -8,14 +8,32 @@ const DaySelect = props => {
     <div className='row'>
       <select {...props.input}> 
         <option value=''></option>
-        <option value='monday'>Monday</option>
-        <option value='tuesday'>Tuesday</option>
-        <option value='wednesday'>Wednesday</option>
-        <option value='thursday'>Thursday</option>
-        <option value='friday'>Friday</option>
-        <option value='saturday'>Saturday</option>
-        <option value='sunday'>Sunday</option>
+        <option value='Monday'>Monday</option>
+        <option value='Tuesday'>Tuesday</option>
+        <option value='Wednesday'>Wednesday</option>
+        <option value='Thursday'>Thursday</option>
+        <option value='Friday'>Friday</option>
+        <option value='Saturday'>Saturday</option>
+        <option value='Sunday'>Sunday</option>
       </select>
+      {props.meta.touched && props.meta.error && <span className="error">{props.meta.error}</span>}
+    </div>
+  )
+}
+
+const TimeField = props => {
+  return(
+    <div>
+      <input type="text" placeholder='e.g. 9:00am' {...props.input} />
+      {props.meta.touched && props.meta.error && <span className="error">{props.meta.error}</span>}
+    </div>
+  )
+}
+
+const TextInput = props => {
+  return(
+    <div>
+      <input type="text" {...props.input} />
       {props.meta.touched && props.meta.error && <span className="error">{props.meta.error}</span>}
     </div>
   )
@@ -27,6 +45,18 @@ const EventFields = props => {
     <form onSubmit={props.handleSubmit}>
       <label htmlFor='day'>Day of Week</label>
       <Field name='day' component={DaySelect} />
+
+      <label htmlFor='startTime'>Start Time:</label>
+      <Field name='startTime' component={TimeField} />
+
+      <label htmlFor='endTime'>End time:</label>
+      <Field name='endTime' component={TimeField} />
+
+      <label htmlFor='location'>Location:</label>
+      <Field name='location' component={TextInput} />
+
+      <label htmlFor='note'>Note:</label>
+      <Field name='note' component={TextInput} />
 
       {props.error && <strong>{props.error}</strong>}
       <button type='submit'>Submit</button>
