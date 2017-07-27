@@ -2,7 +2,7 @@ describe('test/admin/features/AdminDeletsProductSpec', () => {
   beforeEach(() => {
     stubGlobalFetch({
       '/api/v1/products':  { GET: 'products' },
-      '/api/v1/products.json':  { DELETE: 'deleteProductResponse' }
+      '/api/v1/products/4.json':  { DELETE: 'deleteProductResponse' }
     });
 
     spyOn(window, 'confirm').and.returnValue(true)
@@ -13,12 +13,9 @@ describe('test/admin/features/AdminDeletsProductSpec', () => {
   describe('when an admin deletes a product successfully', () => {
     it('removes the product from the page', done => {
       setTimeout(() => {
+        let deleteButton = wrapper.find('.delete-button').first()
+
          expect(wrapper.text()).toMatch("Coconut Cold Brew")
-
-         console.log(wrapper.text())
-
-         let deleteButton = wrapper.find('.delete-button').first()
-
          simulateIfPresent(deleteButton, 'click');
 
          setTimeout(() => {
