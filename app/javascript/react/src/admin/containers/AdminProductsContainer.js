@@ -15,8 +15,15 @@ class AdminProductsContainer extends Component {
   }
 
   render(){
+    let errorDiv;
+
+    if(this.props.error){
+      errorDiv = <div>{this.props.error}</div>
+    }
     return(
       <div>
+        {errorDiv}
+
         <GroupTile
           key="drinks"
           name="Drinks"
@@ -37,7 +44,8 @@ class AdminProductsContainer extends Component {
 
 let mapStateToProps = state => {
   return {
-    products: state.products.products
+    products: state.products.products,
+    error: state.products.error
   }
 }
 
