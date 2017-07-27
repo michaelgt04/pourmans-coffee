@@ -1,20 +1,21 @@
 import { GET_PRODUCTS_SUCCESS } from '../actions/getProducts';
 import { POST_PRODUCT_SUCCESS } from '../../admin/actions/postProduct';
-import { DELETE_PRODUCT_SUCCESS } from '../../admin/actions/deleteProduct';
+import { DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAILURE } from '../../admin/actions/deleteProduct';
 
 let initialState = {
   products: {
     food: [],
     drinks: []
   },
-  productId: null
+  productId: null,
+  error: ""
 };
 
 export const ProductsReducer = (state = initialState, action) => {
   let newState;
   switch(action.type){
     case GET_PRODUCTS_SUCCESS:
-      newState = { products: action.products.products }
+      newState = { products: action.products.products, error: "" }
       return Object.assign({}, state, newState)
     case POST_PRODUCT_SUCCESS:
       if (action.product.group === "food") {
@@ -60,6 +61,9 @@ export const ProductsReducer = (state = initialState, action) => {
           }
           return Object.assign({}, state, newState)
         }
+    case DELETE_PRODUCT_FAILURE:
+      newState = { error: action.error }
+      return Object.assign({}, state, newState)
     default:
       return state
   }
