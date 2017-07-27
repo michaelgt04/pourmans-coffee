@@ -15,7 +15,9 @@ export const ProductsReducer = (state = initialState, action) => {
   let newState;
   switch(action.type){
     case GET_PRODUCTS_SUCCESS:
-      newState = { products: action.products.products, error: "" }
+      newState = {
+        products: action.products.products
+      }
       return Object.assign({}, state, newState)
     case POST_PRODUCT_SUCCESS:
       if (action.product.group === "food") {
@@ -45,7 +47,8 @@ export const ProductsReducer = (state = initialState, action) => {
           products: {
             food: foodProducts,
             drinks: state.products.drinks
-          }
+          },
+          error: ""
         }
         return Object.assign({}, state, newState)
       } else if (action.product.group === 'drink'){
