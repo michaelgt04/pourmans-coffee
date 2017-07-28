@@ -95,10 +95,23 @@ describe Api::V1::ProductsController do
     end
 
     it "returns errors with unacceptable params" do
-      patch :update, params: { id: product.id, title: "", description: "i am describing a thing with no name", group: "drink" } 
+      patch :update, params: { id: product.id, title: "", description: "i am describing a thing with no name", group: "drink" }
 
       expect(response).to have_http_status :unprocessable_entity
       expect(json_parsed_response.keys).to eq ["errors"]
+    end
+  end
+
+  describe "GET #show" do
+    let!(:product) { FactoryGirl.create(:drink) }
+
+    it "returns the product as JSON" do
+      get :show, params: { id: product.id }
+
+      expect(response).to have_http_status(:ok)
+      expect(response.content_type).to eq("application/json")
+      expect(json_parsed_response.keys).to eq ["id", "title", "description", "group"]
+      expect(json_parsed_response["id"]).to eq product.id
     end
   end
 end
