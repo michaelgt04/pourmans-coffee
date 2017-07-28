@@ -1,4 +1,4 @@
-import { SubmissionError } from 'redux-form';
+import { SubmissionError, reset } from 'redux-form';
 
 export const POST_PRODUCT_SUCCESS = 'POST_PRODUCT_SUCCESS';
 
@@ -18,6 +18,7 @@ export const postProduct = (payload, dispatch) => {
         throw new SubmissionError({ _error: 'It did not work' })
       }
     }).then(product => {
+      dispatch(reset('products'));
       dispatch(postProductSuccess(product))
     }).catch(error => {
       console.log(error)
