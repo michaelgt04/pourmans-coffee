@@ -25,6 +25,10 @@ let validate = values => {
   return errors
 }
 
+let onEditProductSubmit = (values, dispatch) => {
+    dispatch(patchProduct(values))
+}
+
 let onSubmit = (values, dispatch) => {
   dispatch(postProduct(values));
 }

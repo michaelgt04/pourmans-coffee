@@ -1,5 +1,6 @@
 import { GET_PRODUCTS_SUCCESS } from '../actions/getProducts';
 import { POST_PRODUCT_SUCCESS } from '../../admin/actions/postProduct';
+import { EDIT_PRODUCT_SUCCESS } from '../../admin/actions/editProduct';
 import { DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAILURE } from '../../admin/actions/deleteProduct';
 
 let initialState = {
@@ -67,6 +68,8 @@ export const ProductsReducer = (state = initialState, action) => {
     case DELETE_PRODUCT_FAILURE:
       newState = { error: action.error }
       return Object.assign({}, state, newState)
+    case EDIT_PRODUCT_SUCCESS:
+      debugger;
     default:
       return state
   }
