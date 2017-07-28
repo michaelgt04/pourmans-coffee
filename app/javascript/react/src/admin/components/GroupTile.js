@@ -8,6 +8,7 @@ const GroupTile = props => {
       <ProductTile
         key={product.id}
         product={product}
+        deleteProduct={props.deleteProduct}
       />
     )
   })
