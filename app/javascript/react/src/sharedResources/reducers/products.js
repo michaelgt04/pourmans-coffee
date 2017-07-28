@@ -69,7 +69,39 @@ export const ProductsReducer = (state = initialState, action) => {
       newState = { error: action.error }
       return Object.assign({}, state, newState)
     case EDIT_PRODUCT_SUCCESS:
-      debugger;
+      if(action.product.group === "food"){
+        let foodArray = state.products.food
+        let updatedFoodIndex = foodArray.findIndex(product => {
+          return product.id === action.product.id
+        })
+
+        foodArray.splice(updatedFoodIndex, 1)
+        foodArray.splice(updatedFoodIndex, 1, action.product)
+
+        newState = {
+          products: {
+            food: foodArray,
+            drinks: state.products.drinks
+          }
+        }
+        return Object.assign({}, state, newState)
+      } else if (action.product.group === "drink"){
+        let drinkArray = state.products.drinks
+        let updatedDrinkIndex = drinkArray.findIndex(product => {
+          return product.id === action.product.id
+        })
+
+        drinkArray.splice(updatedDrinkIndex, 1)
+        drinkArray.splice(1, updatedDrinkIndex, action.product)
+
+        newState = {
+          products: {
+            food: state.products.food,
+            drinks: drinkArray
+          }
+        }
+        return Object.assign({}, state, newState)
+      }
     default:
       return state
   }

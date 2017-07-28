@@ -18,7 +18,7 @@ export const postProduct = (payload, dispatch) => {
         throw new SubmissionError({ _error: 'It did not work' })
       }
     }).then(product => {
-      dispatch(reset('products'));
+      dispatch(reset('new-product'));
       dispatch(postProductSuccess(product))
     }).catch(error => {
       console.log(error)
