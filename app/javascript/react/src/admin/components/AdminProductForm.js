@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import ProductFields from './ProductFields';
 import { postProduct } from '../actions/postProduct';
-
+import { connect } from 'react-redux'
 let validate = values => {
   const errors = {};
 
@@ -29,12 +29,58 @@ let onEditProductSubmit = (values, dispatch) => {
     dispatch(patchProduct(values))
 }
 
-let onSubmit = (values, dispatch) => {
+let onNewProductSubmit = (values, dispatch) => {
   dispatch(postProduct(values));
 }
 
-export default reduxForm({
-  form: 'products',
-  onSubmit,
-  validate
-})(ProductFields)
+class ProductFormWrapper extends Component {
+
+  render(){
+    if(this.props.productId){
+      debugger;
+    }
+
+    const NewProductForm = reduxForm({
+      form: 'new-product',
+      validate,
+      onSubmit: onNewProductSubmit
+    })(ProductFields)
+
+    // initialValues: currentProductData
+    const EditProductForm = reduxForm({
+      form: 'edit-product',
+      validate,
+      onSubmit: onEditProductSubmit,
+    })(ProductFields)
+
+    let form;
+    if(this.props.productId){
+      form = <EditProductForm />
+    } else {
+      form = <NewProductForm />
+    }
+
+    return(
+      <div>
+        {form}
+      </div>
+    )
+  }
+}
+
+let mapStateToProps = state => {
+  return {
+    editProductForm: state.editProductFormReducer,
+    productId: state.productForm.productId
+  }
+}
+
+let mapDispatchToProps = dispatch => {
+  return {
+    text: (id) => {
+      console.log('hello from map dispatch to props!')
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductFormWrapper)
