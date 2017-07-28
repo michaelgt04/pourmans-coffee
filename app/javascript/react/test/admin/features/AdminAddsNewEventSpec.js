@@ -12,9 +12,9 @@ describe('test/admin/features/AdminAddsNewEventSpec', () => {
     it('submits the event and displays it on the page', done => {
       setTimeout(() => {
          select('Monday', { from: 'day' }, wrapper)
-         fillIn('startTime', { with: '9:00am' }, wrapper)
+         fillIn('startTime', { with: '9:30am' }, wrapper)
          fillIn('endTime', { with: '12:00pm' }, wrapper)
-         fillIn('location', { with: 'Square' }, wrapper)
+         fillIn('location', { with: 'Post Office Square' }, wrapper)
          fillIn('note', { with: 'Every other week' }, wrapper)
 
          let submitButton = wrapper.find('.event-submit-button');
@@ -23,7 +23,7 @@ describe('test/admin/features/AdminAddsNewEventSpec', () => {
 
          setTimeout(() => {
             expect(wrapper.text()).toMatch("Monday")
-            expect(wrapper.text()).toMatch("9:00am")
+            expect(wrapper.text()).toMatch("9:30am")
             expect(wrapper.text()).toMatch("12:00pm")
             expect(wrapper.text()).toMatch("Dewey Square")
             expect(wrapper.text()).toMatch("Every other week")
@@ -34,20 +34,53 @@ describe('test/admin/features/AdminAddsNewEventSpec', () => {
   })
 
   fdescribe('when an admin adds a new product unsuccessfully', () => {
-    it('renders an error when they do not specify a day and does not submit the product', done => {
+    it('renders an error when they do not specify required fields and does not submit the product', done => {
       setTimeout(() => {
-         fillIn('startTime', { with: '9:00am' }, wrapper)
-         fillIn('endTime', { with: '12:00pm' }, wrapper)
-         fillIn('location', { with: 'Square' }, wrapper)
-         fillIn('note', { with: 'Every other week' }, wrapper)
+        let submitButton = wrapper.find('.event-submit-button');
 
-         let submitButton = wrapper.find('.event-submit-button');
-
-         simulateIfPresent(submitButton, 'submit');
+        simulateIfPresent(submitButton, 'submit');
 
         expect(wrapper.text()).toMatch("Please enter a day!")
-        expect(wrapper.text()).not.toMatch("a giant cookie")
+        expect(wrapper.text()).toMatch("Please enter a start time!")
+        expect(wrapper.text()).toMatch("Please enter an end time!")
+        expect(wrapper.text()).toMatch("Please enter a location!")
+        expect(wrapper.text()).not.toMatch("cookie")
+        done();
+      }, 0)
+    })
 
+    it('renders an error when a user does not provide a time of day (am or pm) and does not submit the product', done => {
+      setTimeout(() => {
+        select('Monday', { from: 'day' }, wrapper)
+        fillIn('startTime', { with: '9:30' }, wrapper)
+        fillIn('endTime', { with: '12:00pm' }, wrapper)
+        fillIn('location', { with: 'Post Office Square' }, wrapper)
+        fillIn('note', { with: 'Every other week' }, wrapper)
+
+        let submitButton = wrapper.find('.event-submit-button');
+
+        simulateIfPresent(submitButton, 'submit');
+
+        expect(wrapper.text()).toContain("Please provide a time of day (am or pm)!") 
+        expect(wrapper.text()).not.toMatch("Post Office Square")
+        done();
+      }, 0)
+    })
+
+    it('renders an error when a user does not provide a valid time format and does not submit the product', done => {
+      setTimeout(() => {
+        select('Monday', { from: 'day' }, wrapper)
+        fillIn('startTime', { with: '9:0am' }, wrapper)
+        fillIn('endTime', { with: '12:00pm' }, wrapper)
+        fillIn('location', { with: 'Post Office Square' }, wrapper)
+        fillIn('note', { with: 'Every other week' }, wrapper)
+
+        let submitButton = wrapper.find('.event-submit-button');
+
+        simulateIfPresent(submitButton, 'submit');
+
+        expect(wrapper.text()).toContain("Please provide a valid time format (e.g. 9:00am)") 
+        expect(wrapper.text()).not.toMatch("Post Office Square")
         done();
       }, 0)
     })
