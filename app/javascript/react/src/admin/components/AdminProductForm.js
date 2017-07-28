@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
-import ProductFields from './ProductFields';
-import { postProduct } from '../actions/postProduct';
 import { connect } from 'react-redux'
+import { postProduct } from '../actions/postProduct';
+import { getProductForEdit } from '../actions/getProductForEdit';
+import ProductFields from './ProductFields';
 let validate = values => {
   const errors = {};
 
@@ -37,7 +38,7 @@ class ProductFormWrapper extends Component {
 
   render(){
     if(this.props.productId){
-      debugger;
+      this.props.getProductForEdit(this.props.productId)
     }
 
     const NewProductForm = reduxForm({
@@ -77,8 +78,8 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return {
-    text: (id) => {
-      console.log('hello from map dispatch to props!')
+    getProductForEdit: (id) => {
+      dispatch(getProductForEdit(id))
     }
   }
 }
