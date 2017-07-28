@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux'
 import { postProduct } from '../actions/postProduct';
+import { patchProduct } from '../actions/editProduct';
 import { getProductForEdit } from '../actions/getProductForEdit';
 import ProductFields from './ProductFields';
 let validate = values => {

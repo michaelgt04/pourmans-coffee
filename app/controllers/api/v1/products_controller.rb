@@ -51,6 +51,6 @@ class Api::V1::ProductsController < Api::ApiController
   end
 
   def update_params
-    params.permit(:title, :description, :group)
+    params.require(:product).permit(:id, :title, :description, :group)
   end
 end
