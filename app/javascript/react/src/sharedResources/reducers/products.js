@@ -2,14 +2,13 @@ import { GET_PRODUCTS_SUCCESS } from '../actions/getProducts';
 import { POST_PRODUCT_SUCCESS } from '../../admin/actions/postProduct';
 import { EDIT_PRODUCT_SUCCESS } from '../../admin/actions/editProduct';
 import { DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAILURE } from '../../admin/actions/deleteProduct';
-import { SELECT_PRODUCT } from '../../admin/actions/selectProduct';
+
 
 let initialState = {
   products: {
     food: [],
     drinks: []
   },
-  productId: null,
   error: ""
 };
 
@@ -71,9 +70,6 @@ export const ProductsReducer = (state = initialState, action) => {
       return Object.assign({}, state, newState)
     case EDIT_PRODUCT_SUCCESS:
       debugger;
-    case SELECT_PRODUCT:
-      newState = { productId: action.productId }
-      return Object.assign({}, state, newState)
     default:
       return state
   }
