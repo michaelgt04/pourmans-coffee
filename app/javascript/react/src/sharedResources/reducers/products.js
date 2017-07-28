@@ -36,7 +36,6 @@ export const ProductsReducer = (state = initialState, action) => {
             }
           }
         }
-        console.log(newState)
       return Object.assign({}, state, newState)
     case DELETE_PRODUCT_SUCCESS:
       if(action.product.group === 'food') {

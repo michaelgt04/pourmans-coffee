@@ -19,7 +19,6 @@ describe('test/admin/features/AdminDeletsProductSpec', () => {
          simulateIfPresent(deleteButton, 'click');
 
          setTimeout(() => {
-           console.log(wrapper.text())
            expect(wrapper.text()).not.toMatch("Coconut Cold Brew")
            done();
          },0)

@@ -4,8 +4,8 @@ export const EDIT_PRODUCT_SUCCESS = "EDIT_PRODUCT_SUCCESS";
 
 export const patchProduct = editProductFormInfo => dispatch => {
   let id = editProductFormInfo.id
-  let body = JSON.stringify({ product: editProductFormInfo })
-  fetch(`/api/v1/products/${id}`, {
+  let body = JSON.stringify(editProductFormInfo)
+  fetch(`/api/v1/products/${id}.json`, {
     method: "PATCH",
     credentials: 'same-origin',
     headers: { 'Content-Type': 'application/json' },
