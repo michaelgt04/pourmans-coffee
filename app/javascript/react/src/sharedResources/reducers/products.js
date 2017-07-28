@@ -1,13 +1,14 @@
 import { GET_PRODUCTS_SUCCESS } from '../actions/getProducts';
 import { POST_PRODUCT_SUCCESS } from '../../admin/actions/postProduct';
+import { EDIT_PRODUCT_SUCCESS } from '../../admin/actions/editProduct';
 import { DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAILURE } from '../../admin/actions/deleteProduct';
+
 
 let initialState = {
   products: {
     food: [],
     drinks: []
   },
-  productId: null,
   error: ""
 };
 
@@ -66,6 +67,38 @@ export const ProductsReducer = (state = initialState, action) => {
     case DELETE_PRODUCT_FAILURE:
       newState = { error: action.error }
       return Object.assign({}, state, newState)
+    case EDIT_PRODUCT_SUCCESS:
+      if(action.product.group === "food"){
+        let foodArray = state.products.food
+        let updatedFoodIndex = foodArray.findIndex(product => {
+          return product.id === action.product.id
+        })
+
+        foodArray.splice(updatedFoodIndex, 1, action.product)
+
+        newState = {
+          products: {
+            food: foodArray,
+            drinks: state.products.drinks
+          }
+        }
+        return Object.assign({}, state, newState)
+      } else if (action.product.group === "drink"){
+        let drinkArray = state.products.drinks
+        let updatedDrinkIndex = drinkArray.findIndex(product => {
+          return product.id === action.product.id
+        })
+
+        drinkArray.splice(updatedDrinkIndex, 1, action.product)
+
+        newState = {
+          products: {
+            food: state.products.food,
+            drinks: drinkArray
+          }
+        }
+        return Object.assign({}, state, newState)
+      }
     default:
       return state
   }

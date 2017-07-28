@@ -7,11 +7,16 @@ const ProductTile = props => {
     }
   }
 
+  let handleSelectedClick = () => {
+    props.selectProductForEdit(props.product.id)
+  }
+
   return(
     <div>
       <p>{props.product.title}</p>
       <p>{props.product.description}</p>
       <button className="delete-button" onClick={handleDeleteClick}>Delete</button>
+      <button className="edit-button" onClick={handleSelectedClick}>Edit</button>
     </div>
   )
 }
