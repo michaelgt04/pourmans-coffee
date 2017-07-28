@@ -5,15 +5,18 @@ let initialState = {
   productId: null,
   productForEdit: null
 }
+// case SELECT_PRODUCT:
+// newState = { productId: action.productId }
+// return Object.assign({}, state, newState)
 
 export const ProductFormReducer = (state = initialState, action) => {
   let newState;
   switch(action.type){
-    case SELECT_PRODUCT:
-      newState = { productId: action.productId }
-      return Object.assign({}, state, newState)
     case GET_PRODUCT_FOR_EDIT_SUCCESS:
-      newState = { productForEdit: action.productForEdit}
+      newState = {
+        productForEdit: action.productForEdit,
+        productId: action.productId
+      }
       return Object.assign({}, state, newState)
     default:
       return state

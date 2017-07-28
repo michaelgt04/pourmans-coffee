@@ -8,7 +8,7 @@ const ProductTile = props => {
   }
 
   let handleSelectedClick = () => {
-    props.selectProduct(props.product.id)
+    props.selectProductForEdit(props.product.id)
   }
 
   return(
