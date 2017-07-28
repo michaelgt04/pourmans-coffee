@@ -1,0 +1,69 @@
+@import 'breakpoint';
+
+.navbar {
+  position: fixed;
+  max-width: 15rem;
+  right: 3%;
+  top: 25%;
+  z-index: 1;
+
+  @include breakpoint(medium){
+    min-width: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  @include breakpoint(small){
+    min-width: 100%;
+    top: 0;
+    right: 0;
+    white-space: nowrap;
+  }
+
+  .links {
+    list-style-type: none;
+    padding: 1rem;
+    background-color: #434747;
+    padding: 0;
+
+    @include breakpoint(medium){
+      margin-top: 0;
+      text-align: center;
+    }
+
+    @include breakpoint(small){
+      margin-top: 0;
+      text-align: center;
+    }
+  }
+
+  a {
+    border-bottom: none;
+    padding: 1.25rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: white;
+    font-weight: bold;
+
+    @include breakpoint(medium){
+      display: inline-block;
+      padding: 1.25rem;
+    }
+    @include breakpoint(small){
+      display: inline-block;
+      padding-right: .5rem;
+      padding-left: .5rem;
+      font-size: 1em;
+    }
+  }
+
+  a:hover {
+    color: lighten(#434747, 50%);
+  }
+
+  .selected {
+    background-color: #B0906C;
+    color: white;
+  }
+}

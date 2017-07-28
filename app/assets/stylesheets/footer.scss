@@ -20,4 +20,17 @@ $dark-gray: #434747;
     font-size: 2rem;
     padding-right: .5rem;
   }
+
+  .contact-icons {
+    padding-bottom: 2rem;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: lighten(#434747, 40%);
+  }
 }

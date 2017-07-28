@@ -1,9 +1,20 @@
+@import 'breakpoint';
+
 .instagram {
   padding: 2rem;
-  background-color: #B0906C;
-  min-height: 100vh;
+  background-color: #F6F5F3;
+  min-height: 25vh;
+
+  @include breakpoint(instaPadding){
+    padding-right: 13%;
+  }
 
   .instagram-photo{
     padding: .5rem;
+    border-radius: .8rem;
+  }
+
+  .insta-header {
+    font-family: 'Homemade Apple', cursive;
   }
 }

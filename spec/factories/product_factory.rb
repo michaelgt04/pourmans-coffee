@@ -1,7 +1,15 @@
 FactoryGirl.define do
   factory :product do
-    title "Coconut Cold Brew"
-    description "The most amazing coffee ever"
-    img_url "www.amazingcoffee.com"
+    factory :drink do
+      title "Coconut Cold Brew"
+      description "The most amazing coffee ever"
+      group "drink"
+    end
+
+    factory :food do
+      title "Dark Chocolate Brownie"
+      description "Incredibly fudgey"
+      group "food"
+    end
   end
 end

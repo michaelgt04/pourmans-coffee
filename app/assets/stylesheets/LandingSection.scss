@@ -1,7 +1,7 @@
 @import 'breakpoint';
 
 .landing-section {
-  background-color: #D6C8AE;
+  background-color: #F6F5F3;
   height: 100vh;
 
   .logo {
@@ -9,11 +9,11 @@
     margin: auto;
     max-height: 90%;
     max-width: 90%;
-    padding-top: 50%;
+    padding-top: 35%;
 
     @include breakpoint(medium){
-      padding-top: 15%;
-      max-height: 80%;
+      padding-top: 5%;
+      max-height: 75%;
     }
 
     @include breakpoint(large){
@@ -22,43 +22,42 @@
     };
   }
 
+  .down-arrow-link {
+    text-decoration: none;
+  }
+
   .nav-down {
     font-size: 3rem;
     color: #434747;
     display: block;
     text-align: center;
-    margin-top: 45%;
+    margin-top: 40%;
 
     @include breakpoint(medium) {
-      margin: 10% 45% 0;
       font-size: 4rem;
-      color: #D6C8AE;
-      background-color: #434747;
       border-radius: 10%;
       padding-bottom: 1%;
-
-      &:hover {
-        color: #434747;
-        background-color: #D6C8AE;
-      }
+      position: absolute;
+      transform: translateX(-50%);
+      left: 50%;
+      bottom: 1rem;
     }
 
     @include breakpoint(large) {
       font-size: 5rem;
-      display: inline;
-      position: fixed;
-      color: #D6C8AE;
+      color: #F6F5F3;
       background-color: #434747;
-      top: 85%;
-      margin: 0 0 0 90%;
+      right: 3.5%;
+      position: absolute;
+      bottom: 1rem;
+      padding: 0.5rem;
+      padding-bottom: 1%;
       border-radius: 10%;
-      padding-bottom: .5%;
-
-      &:hover {
-        color: #434747;
-        background-color: #D6C8AE;
-      }
     }
-
   }
+
+    .nav-down:hover {
+      color: #434747;
+      background-color: #F6F5F3 ;
+    }
 }

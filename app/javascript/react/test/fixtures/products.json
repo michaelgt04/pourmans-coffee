@@ -1,0 +1,32 @@
+{
+  "products": {
+    "drinks": [
+      {
+        "id": 4,
+        "title": "Coconut Cold Brew",
+        "description": "The best coffee you've ever had.",
+        "group": "drink"
+      },
+      {
+        "id": 5,
+        "title": "Nitro Cold Brew",
+        "description": "Amazingly smooth.",
+        "group": "drink"
+      }
+    ],
+    "food": [
+      {
+        "id": 6,
+        "title": "Dark Chocolate Brownie",
+        "description": "Incredibly fudgey",
+        "group": "food"
+      },
+      {
+        "id": 7,
+        "title": "Chocolate Chip Cookie",
+        "description": "Awesome chunks of chocolate baked into freshly baked goodness",
+        "group": "food"
+      }
+    ]
+  }
+}

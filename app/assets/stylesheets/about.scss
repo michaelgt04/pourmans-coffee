@@ -3,9 +3,14 @@ $light-blue: #E6EDF7;
 
 .about-us-section{
   background-image: url('http://res.cloudinary.com/dpuzgzqir/image/upload/v1497541257/coffee-beans_kenwxf.jpg');
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
   min-width: 100vw;
-  background-attachment: fixed;
+
+  @include breakpoint(small){
+    background-attachment: scroll;
+  }
 
   .overlay {
     background-color: $light-blue;
@@ -19,21 +24,29 @@ $light-blue: #E6EDF7;
     margin: auto;
     text-align: justify;
     padding: 10% 0;
+
+    @include breakpoint(large){
+      margin: 0 10% 0 6%;
+    }
   }
 
   .about-header {
     font-size: 2.5em;
+    font-family: 'Pathway Gothic One';
+    text-transform: uppercase;
+    letter-spacing: .30rem;
   }
 
   .blurb {
-    font-size: 1.25em;
+    font-size: 1em;
+    font-family: 'Open Sans';
 
     @include breakpoint(medium){
-      font-size: 1.5em;
+      font-size: 1.25em;
     }
 
     @include breakpoint(large){
-      font-size: 1.5em;
-    };
+      font-size: 1.25em;
+    }
   }
 }
