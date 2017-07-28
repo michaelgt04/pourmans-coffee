@@ -59,7 +59,7 @@ const EventFields = props => {
       <Field name='note' component={TextInput} />
 
       {props.error && <strong>{props.error}</strong>}
-      <button type='submit'>Submit</button>
+      <button className='event-submit-button' type='submit'>Submit</button>
     </form>
   )
 }
