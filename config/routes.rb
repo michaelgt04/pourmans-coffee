@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :about, only: [:index, :create]
       resources :events, only: [:index, :create]
-      resources :products, only: [:index, :create, :destroy, :update]
+      resources :products, only: [:index, :create, :destroy, :update, :show]
     end
   end
 end

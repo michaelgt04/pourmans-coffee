@@ -14,6 +14,11 @@ class Api::V1::ProductsController < Api::ApiController
     render json: { products: { drinks: drinks, food: food } }
   end
 
+  def show
+    product = Product.find(params[:id])
+    render json: product
+  end
+
   def create
     product = Product.new(create_params)
     if product.save
