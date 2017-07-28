@@ -37,9 +37,7 @@ let onNewProductSubmit = (values, dispatch) => {
 class ProductFormWrapper extends Component {
 
   render(){
-    if(this.props.productId){
-      this.props.getProductForEdit(this.props.productId)
-    }
+    let currentProductData = this.props.productForEdit
 
     const NewProductForm = reduxForm({
       form: 'new-product',
@@ -47,11 +45,11 @@ class ProductFormWrapper extends Component {
       onSubmit: onNewProductSubmit
     })(ProductFields)
 
-    // initialValues: currentProductData
     const EditProductForm = reduxForm({
       form: 'edit-product',
       validate,
       onSubmit: onEditProductSubmit,
+      initialValues: currentProductData
     })(ProductFields)
 
     let form;
@@ -72,7 +70,8 @@ class ProductFormWrapper extends Component {
 let mapStateToProps = state => {
   return {
     editProductForm: state.editProductFormReducer,
-    productId: state.productForm.productId
+    productId: state.productForm.productId,
+    productForEdit: state.productForm.productForEdit
   }
 }
 
