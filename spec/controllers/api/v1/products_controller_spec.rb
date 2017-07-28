@@ -80,4 +80,25 @@ describe Api::V1::ProductsController do
       expect { delete :destroy, params: { id: food.id } }.to change{ Product.count }.by -1
     end
   end
+
+  describe "PATCH #update" do
+    let!(:product) { FactoryGirl.create(:drink) }
+
+    it "returns the edited product as JSON" do
+      patch :update, params: { id: product.id, title: product.title, description: "new description", group: "drink" }
+
+      expect(response).to have_http_status(:ok)
+      expect(response.content_type).to eq("application/json")
+      expect(json_parsed_response.keys).to eq ["id", "title", "description", "group"]
+      expect(json_parsed_response["id"]).to eq product.id
+      expect(json_parsed_response["description"]).to eq("new description")
+    end
+
+    it "returns errors with unacceptable params" do
+      patch :update, params: { id: product.id, title: "", description: "i am describing a thing with no name", group: "drink" } 
+
+      expect(response).to have_http_status :unprocessable_entity
+      expect(json_parsed_response.keys).to eq ["errors"]
+    end
+  end
 end

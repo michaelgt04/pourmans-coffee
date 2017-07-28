@@ -15,8 +15,17 @@ class Api::V1::ProductsController < Api::ApiController
   end
 
   def create
-    product = Product.new(product_params)
+    product = Product.new(create_params)
     if product.save
+      render json: product
+    else
+      render_object_errors(product)
+    end
+  end
+
+  def update
+    product = Product.find(params[:id])
+    if product.update(update_params)
       render json: product
     else
       render_object_errors(product)
@@ -29,9 +38,14 @@ class Api::V1::ProductsController < Api::ApiController
     render json: product
   end
 
+
   private
 
-  def product_params
+  def create_params
     params.require(:product).permit(:title, :description, :group)
+  end
+
+  def update_params
+    params.permit(:title, :description, :group)
   end
 end
