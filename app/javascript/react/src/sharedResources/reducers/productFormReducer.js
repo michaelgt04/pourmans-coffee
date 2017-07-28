@@ -6,9 +6,6 @@ let initialState = {
   productId: null,
   productForEdit: null
 }
-// case SELECT_PRODUCT:
-// newState = { productId: action.productId }
-// return Object.assign({}, state, newState)
 
 export const ProductFormReducer = (state = initialState, action) => {
   let newState;
