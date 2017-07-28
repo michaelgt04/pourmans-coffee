@@ -26,7 +26,7 @@ let validate = values => {
 }
 
 let onSubmit = (values, dispatch) => {
-  dispatch(postProduct(values))
+  dispatch(postProduct(values));
 }
 
 export default reduxForm({
