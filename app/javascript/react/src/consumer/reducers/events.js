@@ -15,7 +15,6 @@ export const EventsReducer = (state = initialState, action) => {
   let newState;
   switch(action.type){
     case GET_EVENTS_SUCCESS:
-      console.log(action.events)
       return Object.assign({}, state, action.events)
     case POST_EVENT_SUCCESS:
       newState = Object.assign({}, state)

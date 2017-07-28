@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
   def index
-    @current_user = false
+    @current_user = ENV['ADMIN'] 
   end
 end
 
