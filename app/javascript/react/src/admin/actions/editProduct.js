@@ -17,8 +17,8 @@ export const patchProduct = editProductFormInfo => dispatch => {
       console.log('error in fetch')
     }
   }).then(product => {
-    dispatch(reset('edit-product'));
     dispatch(editProductSuccess(product))
+    dispatch(reset('edit-product'));
   }).catch(error => {
     console.log(error)
   })

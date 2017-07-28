@@ -1,5 +1,6 @@
 import { SELECT_PRODUCT } from '../../admin/actions/selectProduct';
 import { GET_PRODUCT_FOR_EDIT_SUCCESS } from '../../admin/actions/getProductForEdit';
+import { EDIT_PRODUCT_SUCCESS } from '../../admin/actions/editProduct';
 
 let initialState = {
   productId: null,
@@ -17,6 +18,9 @@ export const ProductFormReducer = (state = initialState, action) => {
         productForEdit: action.productForEdit,
         productId: action.productId
       }
+      return Object.assign({}, state, newState)
+    case EDIT_PRODUCT_SUCCESS:
+      newState = { productForEdit: null }
       return Object.assign({}, state, newState)
     default:
       return state

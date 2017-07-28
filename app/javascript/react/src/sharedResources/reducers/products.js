@@ -75,7 +75,6 @@ export const ProductsReducer = (state = initialState, action) => {
           return product.id === action.product.id
         })
 
-        foodArray.splice(updatedFoodIndex, 1)
         foodArray.splice(updatedFoodIndex, 1, action.product)
 
         newState = {
@@ -91,8 +90,7 @@ export const ProductsReducer = (state = initialState, action) => {
           return product.id === action.product.id
         })
 
-        drinkArray.splice(updatedDrinkIndex, 1)
-        drinkArray.splice(1, updatedDrinkIndex, action.product)
+        drinkArray.splice(updatedDrinkIndex, 1, action.product)
 
         newState = {
           products: {
