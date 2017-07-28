@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getProducts } from '../../sharedResources/actions/getProducts';
-import { deleteProduct } from '../actions/deleteProduct';
+import { deleteProduct } from
+ '../actions/deleteProduct';
+ import { selectProduct } from '../actions/selectProduct';
 import GroupTile from '../components/GroupTile';
 import AdminProductForm from '../components/AdminProductForm';
 
@@ -29,12 +31,14 @@ class AdminProductsContainer extends Component {
           name="Drinks"
           products={this.props.products.drinks}
           deleteProduct={this.props.deleteProduct}
+          selectProduct={this.props.selectProduct}
         />
         <GroupTile
           key="food"
           name="Food"
           products={this.props.products.food}
           deleteProduct={this.props.deleteProduct}
+          selectProduct={this.props.selectProduct}
         />
         <AdminProductForm />
       </div>
@@ -45,7 +49,8 @@ class AdminProductsContainer extends Component {
 let mapStateToProps = state => {
   return {
     products: state.products.products,
-    error: state.products.error
+    error: state.products.error,
+    productId: state.products.productId
   }
 }
 
@@ -56,6 +61,9 @@ let mapDispatchToProps = dispatch => {
     },
     deleteProduct: (productId) => {
       dispatch(deleteProduct(productId))
+    },
+    selectProduct: (productId) => {
+      dispatch(selectProduct(productId))
     }
   }
 }
