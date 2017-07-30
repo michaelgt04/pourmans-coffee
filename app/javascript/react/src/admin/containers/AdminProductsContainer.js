@@ -4,7 +4,7 @@ import { getProducts } from '../../sharedResources/actions/getProducts';
 import { deleteProduct } from
  '../actions/deleteProduct';
 import GroupTile from '../components/GroupTile';
-import AdminProductForm from '../components/AdminProductForm';
+import AdminProductFormContainer from './AdminProductFormContainer';
 import { getProductForEdit } from '../actions/getProductForEdit';
 
 class AdminProductsContainer extends Component {
@@ -40,7 +40,7 @@ class AdminProductsContainer extends Component {
           deleteProduct={this.props.deleteProduct}
           selectProductForEdit={this.props.getProductForEdit}
         />
-        <AdminProductForm />
+        <AdminProductFormContainer />
       </div>
     )
   }
