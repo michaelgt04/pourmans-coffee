@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { getProducts } from '../../sharedResources/actions/getProducts';
 import { deleteProduct } from
  '../actions/deleteProduct';
- import { selectProduct } from '../actions/selectProduct';
 import GroupTile from '../components/GroupTile';
 import AdminProductForm from '../components/AdminProductForm';
 import { getProductForEdit } from '../actions/getProductForEdit';
@@ -51,7 +50,6 @@ let mapStateToProps = state => {
   return {
     products: state.products.products,
     error: state.products.error,
-    productId: state.products.productId,
     productForEdit: state.productForm.productForEdit
   }
 }
@@ -63,9 +61,6 @@ let mapDispatchToProps = dispatch => {
     },
     deleteProduct: (productId) => {
       dispatch(deleteProduct(productId))
-    },
-    selectProduct: (productId) => {
-      dispatch(selectProduct(productId))
     },
     getProductForEdit: (id) => {
       dispatch(getProductForEdit(id))

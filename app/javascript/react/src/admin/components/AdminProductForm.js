@@ -54,7 +54,7 @@ class ProductFormWrapper extends Component {
     })(ProductFields)
 
     let form;
-    if(this.props.productId){
+    if(this.props.productForEdit){
       form = <EditProductForm />
     } else {
       form = <NewProductForm />
@@ -71,8 +71,9 @@ class ProductFormWrapper extends Component {
 let mapStateToProps = state => {
   return {
     editProductForm: state.editProductFormReducer,
-    productId: state.productForm.productId,
-    productForEdit: state.productForm.productForEdit
+    productForEdit: state.productForm.productForEdit,
+    products: state.products.products
+
   }
 }
 
