@@ -1,4 +1,3 @@
-import { SELECT_PRODUCT } from '../../admin/actions/selectProduct';
 import { GET_PRODUCT_FOR_EDIT_SUCCESS } from '../../admin/actions/getProductForEdit';
 import { EDIT_PRODUCT_SUCCESS } from '../../admin/actions/editProduct';
 
