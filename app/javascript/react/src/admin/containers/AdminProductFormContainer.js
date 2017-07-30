@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { postProduct } from '../actions/postProduct';
 import { patchProduct } from '../actions/editProduct';
 import { getProductForEdit } from '../actions/getProductForEdit';
-import ProductFields from './ProductFields';
+import ProductFields from '../components/ProductFields';
 let validate = values => {
   const errors = {};
 
@@ -35,7 +35,7 @@ let onNewProductSubmit = (values, dispatch) => {
   dispatch(postProduct(values));
 }
 
-class ProductFormWrapper extends Component {
+class AdminProductFormContainer extends Component {
 
   render(){
     let currentProductData = this.props.productForEdit
@@ -54,7 +54,7 @@ class ProductFormWrapper extends Component {
     })(ProductFields)
 
     let form;
-    if(this.props.productId){
+    if(this.props.productForEdit){
       form = <EditProductForm />
     } else {
       form = <NewProductForm />
@@ -71,7 +71,6 @@ class ProductFormWrapper extends Component {
 let mapStateToProps = state => {
   return {
     editProductForm: state.editProductFormReducer,
-    productId: state.productForm.productId,
     productForEdit: state.productForm.productForEdit
   }
 }
@@ -84,4 +83,4 @@ let mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProductFormWrapper)
+export default connect(mapStateToProps, mapDispatchToProps)(AdminProductFormContainer)

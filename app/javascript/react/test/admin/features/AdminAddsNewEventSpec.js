@@ -33,7 +33,7 @@ describe('test/admin/features/AdminAddsNewEventSpec', () => {
     })
   })
 
-  fdescribe('when an admin adds a new product unsuccessfully', () => {
+  describe('when an admin adds a new product unsuccessfully', () => {
     it('renders an error when they do not specify required fields and does not submit the product', done => {
       setTimeout(() => {
         let submitButton = wrapper.find('.event-submit-button');
@@ -61,7 +61,7 @@ describe('test/admin/features/AdminAddsNewEventSpec', () => {
 
         simulateIfPresent(submitButton, 'submit');
 
-        expect(wrapper.text()).toContain("Please provide a time of day (am or pm)!") 
+        expect(wrapper.text()).toContain("Please provide a time of day (am or pm)!")
         expect(wrapper.text()).not.toMatch("Post Office Square")
         done();
       }, 0)
@@ -79,7 +79,7 @@ describe('test/admin/features/AdminAddsNewEventSpec', () => {
 
         simulateIfPresent(submitButton, 'submit');
 
-        expect(wrapper.text()).toContain("Please provide a valid time format (e.g. 9:00am)") 
+        expect(wrapper.text()).toContain("Please provide a valid time format (e.g. 9:00am)")
         expect(wrapper.text()).not.toMatch("Post Office Square")
         done();
       }, 0)

@@ -2,8 +2,7 @@ export const GET_PRODUCT_FOR_EDIT_SUCCESS = 'GET_PRODUCT_FOR_EDIT_SUCCESS'
 
 export const getProductForEditSuccess = productForEdit => ({
   type: GET_PRODUCT_FOR_EDIT_SUCCESS,
-  productForEdit,
-  productId: productForEdit.id
+  productForEdit
 })
 
 export const getProductForEdit = id => dispatch => {
