@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getProducts } from '../actions/getProducts';
+import { getProducts } from '../../admin/actions/getProducts';
 import ScrollableAnchor from 'react-scrollable-anchor';
 import ProductTile from '../components/ProductTile';
 import ProductDisplay from '../components/ProductDisplay';

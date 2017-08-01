@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe Api::V1::ProductsController do
+describe Api::V1::Admin::ProductsController do
   let!(:drink) { FactoryGirl.create(:drink) }
   let!(:food) { FactoryGirl.create(:food) }
   let(:json_parsed_response) { JSON.parse(response.body) }

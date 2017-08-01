@@ -1,7 +1,7 @@
 describe('test/admin/features/AdminEditsProductSpec', () => {
   beforeEach(() => {
     stubGlobalFetch({
-      '/api/v1/products':  { GET: 'products' },
+      '/api/v1/admin/products':  { GET: 'products' },
       '/api/v1/products/4.json':  { PATCH: 'patchProduct' },
       '/api/v1/products/4':  { GET: 'productShow' },
     });

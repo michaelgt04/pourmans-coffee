@@ -8,7 +8,7 @@ describe('NavBar', () => {
         return(createResponseFromFixture('about'))
       } else if (url.endsWith('/api/v1/events')){
         return(createResponseFromFixture('events'))
-      } else if (url.endsWith('/api/v1/products')) {
+      } else if (url.endsWith('/api/v1/admin/products')) {
         return(createResponseFromFixture('products'))
       }
     })

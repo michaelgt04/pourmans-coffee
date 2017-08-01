@@ -1,4 +1,4 @@
-import { GET_PRODUCTS_SUCCESS } from '../actions/getProducts';
+import { GET_PRODUCTS_SUCCESS } from '../../admin/actions/getProducts';
 import { POST_PRODUCT_SUCCESS } from '../../admin/actions/postProduct';
 import { EDIT_PRODUCT_SUCCESS } from '../../admin/actions/editProduct';
 import { DELETE_PRODUCT_SUCCESS, DELETE_PRODUCT_FAILURE } from '../../admin/actions/deleteProduct';
