@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductTile = props => {
   let handleDeleteClick = () => {
-    if(confirm('Are you sure?')) {
+    if(confirm(`Are you sure you want to delete ${props.product.title}?`)) {
       props.deleteProduct(props.product.id)
     }
   }
