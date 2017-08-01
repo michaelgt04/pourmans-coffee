@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { postProduct } from '../actions/postProduct';
 import { patchProduct } from '../actions/editProduct';
 import { getProductForEdit } from '../actions/getProductForEdit';
+import { cancelEdit } from '../actions/cancelEdit';
 import ProductFields from '../components/ProductFields';
 let validate = values => {
   const errors = {};
@@ -55,7 +56,8 @@ class AdminProductFormContainer extends Component {
 
     let form;
     if(this.props.productForEdit){
-      form = <EditProductForm />
+      form =
+      <EditProductForm cancelEdit={this.props.cancelEdit}/>
     } else {
       form = <NewProductForm />
     }
@@ -79,6 +81,9 @@ let mapDispatchToProps = dispatch => {
   return {
     getProductForEdit: (id) => {
       dispatch(getProductForEdit(id))
+    },
+    cancelEdit: () => {
+      dispatch(cancelEdit())
     }
   }
 }

@@ -25,6 +25,18 @@ describe('test/admin/features/AdminEditsProductSpec', () => {
           }, 0)
       }, 0)
     })
+
+    it('renders the cancel button', done => {
+      setTimeout(() => {
+        let editButton = wrapper.find('.edit-button').first()
+         simulateIfPresent(editButton, 'click');
+
+          setTimeout(() => {
+            expect(wrapper.find('.cancel-edit-button')).toBePresent()
+            done();
+          }, 0)
+      }, 0)
+    })
   })
 
   describe('an admin successfully edits a product', () => {

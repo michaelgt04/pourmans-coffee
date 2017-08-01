@@ -25,7 +25,10 @@ const InputTextField = props => {
 }
 
 const ProductFields = props => {
-
+  let cancelButton
+  if(props.initialValues){
+    cancelButton = <button className='cancel-edit-button' onClick={props.cancelEdit}>Cancel</button>
+  }
   return(
     <form onSubmit={props.handleSubmit}>
       <label htmlFor='title'>Title</label>
@@ -39,6 +42,7 @@ const ProductFields = props => {
 
       {props.error && <strong>{props.error}</strong>}
       <button className='product-submit-button'type='submit'>Submit</button>
+      {cancelButton}
     </form>
   )
 }
