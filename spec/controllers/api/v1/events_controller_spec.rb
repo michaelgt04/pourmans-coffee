@@ -57,7 +57,7 @@ describe Api::V1::EventsController do
     end
   end
 
-  describe "POST #edit" do
+  describe "PUT #edit" do
     let!(:expected_json) {
       {
         "id" => event.id,
@@ -81,6 +81,13 @@ describe Api::V1::EventsController do
       expect(response.content_type).to eq("application/json")
 
       expect(json_parsed_response["day"]).to eq "Friday"
+    end
+
+    it "returns errors with unacceptable params" do
+      put :update, params: { id: event.id, event: { day: 'Harvestday' } }
+
+      expect(response).to have_http_status :unprocessable_entity
+      expect(json_parsed_response.keys).to eq ["errors"]
     end
   end
 end
