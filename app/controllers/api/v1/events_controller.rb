@@ -15,8 +15,17 @@ class Api::V1::EventsController < Api::ApiController
     end
   end
 
+  def update
+    event = Event.find(params[:id])
+    if event.update(event_params)
+      render json: event
+    else
+      render_object_errors(event)
+    end
+  end
+
   private
-  
+
   def event_params
     params.require(:event).permit(:day, :start_time, :end_time, :location, :note)
   end

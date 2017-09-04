@@ -9,7 +9,6 @@ export const getInstaFeedSuccess = instagram => {
   }
 }
 
-
 export const fetchInstaFeed = () => {
   let instagramToken = envVar('instagram')
 
