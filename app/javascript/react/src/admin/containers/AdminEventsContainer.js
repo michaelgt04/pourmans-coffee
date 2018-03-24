@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import AdminEventForm from '../components/AdminEventForm'
 import DayTile from '../components/DayTile';
 import { getEvents } from '../actions/getEvents';
+import { deleteEvent } from '../actions/deleteEvent';
 
 class AdminEventsContainer extends Component{
   componentDidMount(){
@@ -10,7 +11,7 @@ class AdminEventsContainer extends Component{
   }
   
   render(){
-    let events = this.props.events
+    const { deleteEvent, events } = this.props;
     let daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
     let days = daysOfWeek.map(day => {
@@ -19,6 +20,7 @@ class AdminEventsContainer extends Component{
           key={day}
           day={day}
           events={events[day]} 
+          deleteEvent={deleteEvent}
         /> 
       ) 
     })
@@ -41,6 +43,9 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return{
+    deleteEvent: id => {
+      dispatch(deleteEvent(id))
+    },
     getEvents: () => {
       dispatch(getEvents()) 
     }
