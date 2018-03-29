@@ -14,6 +14,7 @@ export const getEvents = () => {
       let events = response.json()
       return events
     }).then(events => {
+      console.log(events)
       return dispatch(getEventsSuccess(events))
     })
   }

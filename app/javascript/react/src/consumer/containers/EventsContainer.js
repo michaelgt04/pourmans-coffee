@@ -18,15 +18,16 @@ class EventsContainer extends Component {
     let events = this.props.events;
 
     for(var day in events) {
+      if (events[day] !== undefined && events[day].length !== 0){
+        let dayTile =
+          <DayTile
+            key={day}
+            events={events[day]}
+            day={day}
+          />
 
-      let dayTile =
-        <DayTile
-          key={day}
-          events={events[day]}
-          day={day}
-        />
-
-      eventDays.push(dayTile)
+        eventDays.push(dayTile)
+      }
     }
 
     return(

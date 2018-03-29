@@ -40,7 +40,7 @@ export const EventsReducer = (state = initialState, action) => {
       newState = Object.assign({}, state)
       Object.keys(state).forEach(key => {
         if (action.event.day === key){
-          newState[key] = newState[key].filter(event => { event.id !== action.event.id })
+          newState[key] = newState[key].filter(event => { return event.id !== action.event.id })
         }
       })
       return newState
