@@ -1,19 +1,21 @@
 import React from 'react';
 import EventTile from './EventTile';
 
-const DayTile = ({ day, deleteEvent, events }) => {
+const DayTile = ({ day, deleteEvent, getEventForEdit, events }) => {
   if (!events){
     events = [] 
   }
 
   let eventsArray = events.map(event => {
     const individualHandleDelete = () => { deleteEvent(event.id) };
+    const individualGetEventForEdit = () => { getEventForEdit(event.id) };
 
     return(
       <EventTile 
         key={event.id} 
         id={event.id}
         day={event.day}
+        getEventForEdit={individualGetEventForEdit}
         handleDelete={individualHandleDelete}
         startTime={event.start_time}
         endTime={event.end_time}

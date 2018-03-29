@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EventTile = ({ endTime, handleDelete, location, note, startTime }) => {
+const EventTile = ({ endTime, getEventForEdit, handleDelete, location, note, startTime }) => {
   return(
     <div>
       <span><strong>{location}</strong></span>
@@ -8,6 +8,7 @@ const EventTile = ({ endTime, handleDelete, location, note, startTime }) => {
       <span>End Time: {endTime}</span>
       <span>Note: {note}</span>
       <span onClick={handleDelete}>Delete</span>
+      <span onClick={getEventForEdit}>Edit</span>
     </div>
   )
 }

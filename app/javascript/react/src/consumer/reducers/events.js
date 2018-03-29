@@ -1,6 +1,7 @@
 import { GET_EVENTS_SUCCESS } from '../actions/getEvents';
 import { POST_EVENT_SUCCESS } from '../../admin/actions/postEvent';
 import { DELETE_EVENT_SUCCESS } from '../../admin/actions/deleteEvent';
+import { PATCH_EVENT_SUCCESS } from '../../admin/actions/patchEvent';
 
 let initialState = {
   Monday: [],
@@ -25,6 +26,16 @@ export const EventsReducer = (state = initialState, action) => {
         }
       })
       return newState
+    case PATCH_EVENT_SUCCESS:
+      newState = Object.assign({}, state)
+      Object.keys(newState).forEach(key => {
+        newState[key].forEach((event, index) => {
+          if (event.id === action.event.id){
+            newState[key][index] = action.event
+          }
+        })
+      })
+      return newState
     case DELETE_EVENT_SUCCESS:
       newState = Object.assign({}, state)
       Object.keys(state).forEach(key => {
@@ -32,8 +43,6 @@ export const EventsReducer = (state = initialState, action) => {
           newState[key] = newState[key].filter(event => { event.id !== action.event.id })
         }
       })
-      console.log(state)
-      console.log(newState)
       return newState
     default:
       return state
