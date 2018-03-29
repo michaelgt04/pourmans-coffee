@@ -7,7 +7,11 @@ const DayTile = ({ day, deleteEvent, getEventForEdit, events }) => {
   }
 
   let eventsArray = events.map(event => {
-    const individualHandleDelete = () => { deleteEvent(event.id) };
+    const individualHandleDelete = () => { 
+      if(confirm(`Are you sure you want to delete ${event.location} on ${event.day}?`)) {
+        deleteEvent(event.id)
+      }
+    };
     const individualGetEventForEdit = () => { getEventForEdit(event.id) };
 
     return(

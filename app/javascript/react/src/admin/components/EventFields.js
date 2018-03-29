@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
+import styled from 'styled-components';
 import { postEvent } from '../actions/postEvent';
 
 const DaySelect = props => {
@@ -40,6 +41,16 @@ const TextInput = props => {
 }
 
 const EventFields = props => {
+  const TileButton = styled.button`
+    width: 75px;
+    padding: 7px 0;
+    background-color: lightgrey;
+    margin: 5px 0;
+
+    &:hover {
+      background-color: linen;
+    }
+  `;
   
   return(
     <form onSubmit={props.handleSubmit}>
@@ -59,7 +70,7 @@ const EventFields = props => {
       <Field name='note' component={TextInput} />
 
       {props.error && <strong>{props.error}</strong>}
-      <button className='event-submit-button' type='submit'>Submit</button>
+      <TileButton className='event-submit-button' type='submit'>Submit</TileButton>
     </form>
   )
 }
