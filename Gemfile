@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'active_model_serializers'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'font-awesome-rails'
+gem 'bcrypt'
 
 group :development do
   gem 'listen', '~> 3.0.5'

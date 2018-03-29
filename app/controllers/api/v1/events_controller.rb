@@ -6,6 +6,11 @@ class Api::V1::EventsController < Api::ApiController
     render json: events.group_by(&:day)
   end
 
+  def show
+    event = Event.find(params[:id])
+    render json: event
+  end
+
   def create
     event = Event.new(event_params)
     if event.save
@@ -22,6 +27,12 @@ class Api::V1::EventsController < Api::ApiController
     else
       render_object_errors(event)
     end
+  end
+
+  def destroy
+    event = Event.find(params[:id])
+    event.destroy
+    render json: event
   end
 
   private

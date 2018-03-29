@@ -1,12 +1,14 @@
 import React from 'react';
 
-const EventTile = props => {
+const EventTile = ({ endTime, getEventForEdit, handleDelete, location, note, startTime }) => {
   return(
     <div>
-      <span><strong>{props.location}</strong></span>
-      <span>Start Time: {props.startTime}</span>
-      <span>End Time: {props.endTime}</span>
-      <span>Note: {props.note}</span>
+      <span><strong>{location}</strong></span>
+      <span>Start Time: {startTime}</span>
+      <span>End Time: {endTime}</span>
+      <span>Note: {note}</span>
+      <span onClick={handleDelete}>Delete</span>
+      <span onClick={getEventForEdit}>Edit</span>
     </div>
   )
 }

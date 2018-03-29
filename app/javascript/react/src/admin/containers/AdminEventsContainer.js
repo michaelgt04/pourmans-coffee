@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import AdminEventForm from '../components/AdminEventForm'
+import AdminEventFormContainer from '../containers/AdminEventFormContainer'
 import DayTile from '../components/DayTile';
 import { getEvents } from '../actions/getEvents';
+import { deleteEvent } from '../actions/deleteEvent';
+import { getEventForEdit } from '../actions/patchEvent';
 
 class AdminEventsContainer extends Component{
   componentDidMount(){
@@ -10,7 +12,7 @@ class AdminEventsContainer extends Component{
   }
   
   render(){
-    let events = this.props.events
+    const { deleteEvent, getEventForEdit, events } = this.props;
     let daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
     let days = daysOfWeek.map(day => {
@@ -19,6 +21,8 @@ class AdminEventsContainer extends Component{
           key={day}
           day={day}
           events={events[day]} 
+          deleteEvent={deleteEvent}
+          getEventForEdit={getEventForEdit}
         /> 
       ) 
     })
@@ -27,7 +31,7 @@ class AdminEventsContainer extends Component{
       <div>
         <h2>Current Events:</h2>
         {days}
-        <AdminEventForm />
+        <AdminEventFormContainer />
       </div>
     )
   }
@@ -41,8 +45,14 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return{
+    deleteEvent: id => {
+      dispatch(deleteEvent(id))
+    },
     getEvents: () => {
       dispatch(getEvents()) 
+    },
+    getEventForEdit: id => {
+      dispatch(getEventForEdit(id))
     }
   }
 }

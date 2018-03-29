@@ -1,3 +1,6 @@
 <% if @current_user %>
+  <div><%= link_to "Logout", "/admin/logout", method: :delete %></div>
   <div id='react-app' data-instagram=<%="#{ENV['INSTAGRAM_ACCESS_TOKEN']}"%>></div>
+<% else %>
+  <%= controller.redirect_to '/admin/new' %>
 <% end %>

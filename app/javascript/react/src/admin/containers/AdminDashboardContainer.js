@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class AdminDashboardContainer extends Component{
   render(){
     return(
-      <h1>I have Admin Facts</h1>
+      <h1>Welcome to the Admin Dashboard</h1>
     )
   }
 }
