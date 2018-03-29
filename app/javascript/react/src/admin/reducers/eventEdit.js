@@ -12,7 +12,7 @@ export const EventEditReducer = (state = initialState, action) => {
     case GET_EVENT_FOR_EDIT_SUCCESS:
       return Object.assign({}, state, { eventForEdit: action.event })
     case PATCH_EVENT_SUCCESS:
-      newState = { eventForEdit: null }
+      newState = { eventForEdit: null, eventForEditId: null }
       return newState
     default:
       return state

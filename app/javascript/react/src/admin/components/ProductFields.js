@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
+import styled from 'styled-components';
 
 const GroupSelect = props => {
 
@@ -25,6 +26,17 @@ const InputTextField = props => {
 }
 
 const ProductFields = props => {
+  const TileButton = styled.button`
+    width: 75px;
+    padding: 7px 0;
+    background-color: lightgrey;
+    margin: 5px 0;
+
+    &:hover {
+      background-color: linen;
+    }
+  `;
+
   let cancelButton
   if(props.initialValues){
     cancelButton = <button className='cancel-edit-button' onClick={props.cancelEdit}>Cancel</button>
@@ -41,7 +53,7 @@ const ProductFields = props => {
       <Field name='group' component={GroupSelect} />
 
       {props.error && <strong>{props.error}</strong>}
-      <button className='product-submit-button'type='submit'>Submit</button>
+      <TileButton className='product-submit-button'type='submit'>Submit</TileButton>
       {cancelButton}
     </form>
   )
