@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { EventsReducer } from '../../consumer/reducers/events';
 import { AboutReducer } from '../../sharedResources/reducers/about';
 import { ProductsReducer } from './products'
-import { ProductFormReducer } from './ProductFormReducer';
+import { ProductFormReducer } from './productFormReducer';
 import { InstaFeedReducer } from '../../consumer/reducers/instaFeed';
 import { AnchorReducer } from '../../consumer/reducers/anchors';
 import { routerReducer as routing } from 'react-router-redux';
