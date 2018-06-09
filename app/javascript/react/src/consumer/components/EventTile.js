@@ -1,10 +1,13 @@
 import React from 'react';
 
 const EventTile = props => {
+  const { event } = props;
+
   return(
     <div className="event-tile">
-      <p>{props.event.start_time} — {props.event.end_time}</p>
-      <p>{props.event.location}</p>
+      <p>{event.start_time} — {event.end_time}</p>
+      <p>{event.location}</p>
+      { event.note && <p className="note">Note: {event.note}</p>}
     </div>
   )
 }
