@@ -12,7 +12,7 @@ class NavBar extends Component {
   render(){
     let anchorLinks;
     document.addEventListener('scroll', () => {
-      let scrollPosition = document.body.scrollTop
+      let scrollPosition = window.scrollY
       if (scrollPosition > (window.innerHeight / 1.25)) {
         this.props.showNav()
     } else {
@@ -20,7 +20,7 @@ class NavBar extends Component {
     }})
 
     document.addEventListener('scroll', () => {
-      let scrollPosition = document.body.scrollTop
+      let scrollPosition = window.scrollY
       let offset = window.innerHeight * .25
       let eventsBreakpoint = document.getElementsByClassName('events-section')[0].offsetTop - offset
       let aboutBreakpoint = document.getElementsByClassName('about-text')[0].offsetTop - offset
