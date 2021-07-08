@@ -1,14 +1,14 @@
-class Api::V1::ProductsController < Api::ApiController
+class Api::V1::Admin::ProductsController < Api::ApiController
 
   def index
     drinks = ActiveModel::Serializer::CollectionSerializer.new(
       Product.where(group: 'drink'),
-      serializer: Api::V1::ProductSerializer
+      serializer: Api::V1::Admin::ProductSerializer
     )
 
     food = ActiveModel::Serializer::CollectionSerializer.new(
       Product.where(group: 'food'),
-      serializer: Api::V1::ProductSerializer
+      serializer: Api::V1::Admin::ProductSerializer
     )
 
     render json: { products: { drinks: drinks, food: food } }

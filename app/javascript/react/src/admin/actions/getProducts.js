@@ -9,7 +9,7 @@ export const getProductsSuccess = products => {
 
 export const getProducts = () => {
   return (dispatch) => {
-    fetch('/api/v1/products')
+    fetch('/api/v1/admin/products')
     .then(response => {
       let products = response.json()
       return products
